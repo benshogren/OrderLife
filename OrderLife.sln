@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Web Developer Express 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderLife", "OrderLife\OrderLife.csproj", "{E7E36FA9-72E1-4ABA-8FED-538DDD53EB8A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7E36FA9-72E1-4ABA-8FED-538DDD53EB8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7E36FA9-72E1-4ABA-8FED-538DDD53EB8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7E36FA9-72E1-4ABA-8FED-538DDD53EB8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7E36FA9-72E1-4ABA-8FED-538DDD53EB8A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

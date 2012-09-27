@@ -1,0 +1,141 @@
+﻿@model IEnumerable<OrderLife.Models.Appointments>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<p>Do you have a hard time keeping track of your time?</p>
+<p>Start adding to the schedule those daily activites that you absolutely cannot blow off and that have set times (such as work or class). </p>
+<p>Now add in time to eat, sleep, and practice daily hygene.</p>
+<p>Next enter all weekly activities that have set times (such as club meetings, church, set get-togethers with friends or family, etc.)</p>
+<p>Now make time for chores and other managment activities that need to be performed weekly. </p>
+<p>All time not taken up in your schedule at this point is what we call "free time,"
+meaning that it is what is left over after you have met all responsbilities to your job/vocation, daily rituals, sub-communities, and household.
+If you have any hobbies or anything left over that you want to make time for, place them where you would like in your schedule. </p>
+
+<h2>Entries</h2>
+
+<p>
+    @Html.ActionLink("Add Entry", "Create")
+</p>
+
+<table>
+
+
+@foreach (var item in Model) {
+    <tr> 
+        <td>
+            @Html.DisplayFor(modelItem => item.AppointmentValue)
+            @switch(item.Day){
+                case 1:
+                    <p>Sunday</p>;
+                    break;
+                case 2:
+                    <p>Monday</p>;
+                    break;
+                case 3:
+                    <p>Tuesday</p>;
+                    break;
+                case 4:
+                    <p>Wednesday</p>;
+                    break;
+                case 5:
+                    <p>Thursday</p>;
+                    break;
+                case 6:
+                    <p>Friday</p>;
+                    break;
+                case 7:
+                    <p>Saturday</p>;
+                    break;
+            }
+         
+            @Html.DisplayFor(modelItem => item.Time)
+        </td>
+  
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+        </td>
+    </tr>
+}
+
+</table>
+
+
+<h2>Schedule</h2>
+
+<table border="1">
+    <tr>
+        <th></th><th>Sunday</th><th>Monday</th> <th>Tuesday</th><th>Wednesday</th> <th>Thursday</th><th>Friday</th><th>Saturday</th>
+    </tr>
+   
+    <tr>
+        <td>4:00 AM</td>
+        <td>
+
+        </td> 
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>5:00 AM</td>
+    </tr>
+    <tr>
+        <td>6:00 AM</td>
+    </tr>
+    <tr>
+        <td>7:00 AM</td>
+    </tr>
+    <tr>
+        <td>8:00 AM</td>
+    </tr>
+    <tr>
+        <td>9:00 AM</td>
+    </tr>
+    <tr>
+        <td>10:00 AM</td>
+    </tr>
+    <tr>
+        <td>11:00 AM</td>
+    </tr>
+    <tr>
+        <td>12:00 PM</td>
+    </tr>
+    <tr>
+        <td>1:00 PM</td>
+    </tr>
+    <tr>
+        <td>2:00 PM</td>
+    </tr>
+    <tr>
+        <td>3:00 PM</td>
+    </tr>
+    <tr>
+        <td>4:00 PM</td>
+    </tr>
+    <tr>
+        <td>5:00 PM</td>
+    </tr>
+    <tr>
+        <td>6:00 PM</td>
+    </tr>
+    <tr>
+        <td>7:00 PM</td>
+    </tr>
+    <tr>
+        <td>8:00 PM</td>
+    </tr>
+    <tr>
+        <td>9:00 PM</td>
+    </tr>
+   
+
+
+</table>
+
+
+

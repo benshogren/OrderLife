@@ -1,0 +1,7 @@
+c:\users\ben\documents\visual studio 2010\Projects\OrderLife\OrderLife\bin\OrderLife.dll
+c:\users\ben\documents\visual studio 2010\Projects\OrderLife\OrderLife\bin\OrderLife.pdb
+c:\users\ben\documents\visual studio 2010\Projects\OrderLife\OrderLife\bin\EntityFramework.dll
+c:\users\ben\documents\visual studio 2010\Projects\OrderLife\OrderLife\bin\EntityFramework.xml
+c:\users\ben\documents\visual studio 2010\Projects\OrderLife\OrderLife\obj\Debug\ResolveAssemblyReference.cache
+c:\users\ben\documents\visual studio 2010\Projects\OrderLife\OrderLife\obj\Debug\OrderLife.dll
+c:\users\ben\documents\visual studio 2010\Projects\OrderLife\OrderLife\obj\Debug\OrderLife.pdb
