@@ -4,10 +4,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Exercise Regimen</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add Exercise", "Create")
 </p>
 <table>
     <tr>
@@ -18,7 +18,7 @@
             Time
         </th>
         <th>
-            AppointmentValue
+            Exercise
         </th>
         <th></th>
     </tr>
@@ -26,7 +26,29 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Day)
+                   @switch(item.Day){
+                case 1:
+                    <p>Sunday</p>;
+                    break;
+                case 2:
+                    <p>Monday</p>;
+                    break;
+                case 3:
+                    <p>Tuesday</p>;
+                    break;
+                case 4:
+                    <p>Wednesday</p>;
+                    break;
+                case 5:
+                    <p>Thursday</p>;
+                    break;
+                case 6:
+                    <p>Friday</p>;
+                    break;
+                case 7:
+                    <p>Saturday</p>;
+                    break;
+            }
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Time)
@@ -41,5 +63,16 @@
         </td>
     </tr>
 }
-
 </table>
+<p> </p>
+<p> </p>
+<p> </p>
+<table border="1">
+    <tr>
+        <th></th><th>Sunday</th><th></th><th>Monday</th><th></th><th>Tuesday</th><th></th><th>Wednesday</th><th></th>
+        <th>Thursday</th><th></th><th>Friday</th><th></th><th>Saturday</th>
+    </tr>
+</table>
+
+
+
