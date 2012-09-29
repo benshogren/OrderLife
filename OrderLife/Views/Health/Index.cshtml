@@ -5,11 +5,11 @@
 }
 
 <h2>Exercise Regimen</h2>
-
+<a href="#" id="clicker">CLicker</a>
 <p>
     @Html.ActionLink("Add Exercise", "Create")
 </p>
-<table>
+<table id="timestable">
     <tr>
         <th>
             Day
@@ -50,7 +50,7 @@
                     break;
             }
         </td>
-        <td>
+        <td class="times">
             @Html.DisplayFor(modelItem => item.Time)
         </td>
         <td>
@@ -73,6 +73,22 @@
         <th>Thursday</th><th></th><th>Friday</th><th></th><th>Saturday</th>
     </tr>
 </table>
-
+<script type="text/javascript">
+    var sumTimes = function () {
+        //event.preventDefault();
+        var times = $(".times");
+        var sum = 0;
+        for (var x = 0; x <= times.length - 1; x++) {
+            var t = parseInt($(times[x]).text());
+            sum = sum + t;
+        }
+        return sum;
+    };
+    //$("#clicker").click(sumTimes);
+    $(document).ready(function(){
+        var sum = sumTimes();
+        $('#timestable tr:last').after('<tr><td>Total:</td><td>' + sum + '</td></tr>');
+    });
+</script>
 
 
