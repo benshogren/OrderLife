@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<OrderLife.Models.Exercises>
 
+
 @{
     ViewBag.Title = "Index";
 }
@@ -26,35 +27,13 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-                   @switch(item.Day){
-                case 1:
-                    <p>Sunday</p>;
-                    break;
-                case 2:
-                    <p>Monday</p>;
-                    break;
-                case 3:
-                    <p>Tuesday</p>;
-                    break;
-                case 4:
-                    <p>Wednesday</p>;
-                    break;
-                case 5:
-                    <p>Thursday</p>;
-                    break;
-                case 6:
-                    <p>Friday</p>;
-                    break;
-                case 7:
-                    <p>Saturday</p>;
-                    break;
-            }
+            @Html.DisplayFor(modelItem => item.Day)
         </td>
         <td class="times">
             @Html.DisplayFor(modelItem => item.Time)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.AppointmentValue)
+            @Html.DisplayFor(modelItem => item.Exercise)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using System.Data.Entity;            // Database.SetInitialize
+using OrderLife.Models;              // MovieInitializer
 
 namespace OrderLife
 {
@@ -31,6 +33,7 @@ namespace OrderLife
 
         protected void Application_Start()
         {
+            Database.SetInitializer<ExercisesDBContext>(new ExercisesInitializer());
             AreaRegistration.RegisterAllAreas();
 
             RegisterGlobalFilters(GlobalFilters.Filters);

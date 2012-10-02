@@ -1,0 +1,56 @@
+﻿@model OrderLife.Models.Doctor
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Add New Doctor Information</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    
+    <fieldset>
+        <legend>Doctor</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Practice)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Practice)
+
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Phone)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Phone)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NextApp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NextApp)
+
+        </div>
+
+        <p>
+            <input type="submit" value="Add" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

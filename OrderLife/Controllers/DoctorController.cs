@@ -9,36 +9,29 @@ using OrderLife.Models;
 
 namespace OrderLife.Controllers
 { 
-    public class HealthController : Controller
+    public class DoctorController : Controller
     {
-        private ExercisesDBContext db = new ExercisesDBContext();
-
-
-
-        public ActionResult HealthHub1()
-        {
-            return View();
-        } 
+        private DoctorDBContext db = new DoctorDBContext();
 
         //
-        // GET: /Health/
+        // GET: /Doctor/
 
         public ViewResult Index()
         {
-            return View(db.Exercises.ToList());
+            return View(db.Doctor.ToList());
         }
 
         //
-        // GET: /Health/Details/5
+        // GET: /Doctor/Details/5
 
         public ViewResult Details(int id)
         {
-            Exercises exercises = db.Exercises.Find(id);
-            return View(exercises);
+            Doctor doctor = db.Doctor.Find(id);
+            return View(doctor);
         }
 
         //
-        // GET: /Health/Create
+        // GET: /Doctor/Create
 
         public ActionResult Create()
         {
@@ -46,62 +39,62 @@ namespace OrderLife.Controllers
         } 
 
         //
-        // POST: /Health/Create
+        // POST: /Doctor/Create
 
         [HttpPost]
-        public ActionResult Create(Exercises exercises)
+        public ActionResult Create(Doctor doctor)
         {
             if (ModelState.IsValid)
             {
-                db.Exercises.Add(exercises);
+                db.Doctor.Add(doctor);
                 db.SaveChanges();
                 return RedirectToAction("Index");  
             }
 
-            return View(exercises);
+            return View(doctor);
         }
         
         //
-        // GET: /Health/Edit/5
+        // GET: /Doctor/Edit/5
  
         public ActionResult Edit(int id)
         {
-            Exercises exercises = db.Exercises.Find(id);
-            return View(exercises);
+            Doctor doctor = db.Doctor.Find(id);
+            return View(doctor);
         }
 
         //
-        // POST: /Health/Edit/5
+        // POST: /Doctor/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(Exercises exercises)
+        public ActionResult Edit(Doctor doctor)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(exercises).State = EntityState.Modified;
+                db.Entry(doctor).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(exercises);
+            return View(doctor);
         }
 
         //
-        // GET: /Health/Delete/5
+        // GET: /Doctor/Delete/5
  
         public ActionResult Delete(int id)
         {
-            Exercises exercises = db.Exercises.Find(id);
-            return View(exercises);
+            Doctor doctor = db.Doctor.Find(id);
+            return View(doctor);
         }
 
         //
-        // POST: /Health/Delete/5
+        // POST: /Doctor/Delete/5
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {            
-            Exercises exercises = db.Exercises.Find(id);
-            db.Exercises.Remove(exercises);
+            Doctor doctor = db.Doctor.Find(id);
+            db.Doctor.Remove(doctor);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
