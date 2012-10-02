@@ -1,4 +1,4 @@
-﻿@model OrderLife.Models.Doctor
+﻿@model OrderLife.Models.Medications
 
 @{
     ViewBag.Title = "Edit";
@@ -12,7 +12,7 @@
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>Doctor</legend>
+        <legend>Medications</legend>
 
         @Html.HiddenFor(model => model.ID)
 
@@ -25,27 +25,35 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Practice)
+            @Html.LabelFor(model => model.Dosage)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Practice)
-            @Html.ValidationMessageFor(model => model.Practice)
+            @Html.EditorFor(model => model.Dosage)
+            @Html.ValidationMessageFor(model => model.Dosage)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Phone)
+            @Html.LabelFor(model => model.Purpose)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Phone)
-            @Html.ValidationMessageFor(model => model.Phone)
+            @Html.EditorFor(model => model.Purpose)
+            @Html.ValidationMessageFor(model => model.Purpose)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.NextAppointment)
+            Next Refill
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.NextAppointment)
-            @Html.ValidationMessageFor(model => model.NextAppointment)
+            @Html.EditorFor(model => model.NextRefill)
+            @Html.ValidationMessageFor(model => model.NextRefill)
+        </div>
+
+        <div class="editor-label">
+            Name of Prescriber
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NameOfPrescriber)
+            @Html.ValidationMessageFor(model => model.NameOfPrescriber)
         </div>
 
         <p>

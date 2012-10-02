@@ -33,6 +33,7 @@ namespace OrderLife
 
         protected void Application_Start()
         {
+            Database.SetInitializer<DoctorDBContext>(new DoctorInitializer());
             Database.SetInitializer<ExercisesDBContext>(new ExercisesInitializer());
             AreaRegistration.RegisterAllAreas();
 

@@ -2,7 +2,11 @@
     ViewBag.Title = "Home Page";
 }
 
-<h2>@ViewBag.Message</h2>
-<p>
-    To learn more about ASP.NET MVC visit <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
-</p>
+<h2>Feel free to order your life.</h2>
+<p>Would you like help managing your time?</p>
+    @Html.ActionLink("OrderTime", "Index", "Time")
+<p>Would you like to organize your health needs?</p>
+    @Html.ActionLink("OrderBody", "HealthHub1", "Health")
+
+
+

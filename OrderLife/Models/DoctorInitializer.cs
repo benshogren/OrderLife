@@ -12,13 +12,13 @@ namespace OrderLife.Models
   
                  new Doctor {Name = "Sir Thomas Kincaid",
                              Practice = "Orthopraxia",
-                             Phone = 611111,
-                             NextApp = new DateTime(1999, 6, 1)
+                             Phone = "611111",
+                             NextAppointment = "new DateTime(1999, 6, 1)"
                  },
                  new Doctor {Name = "Sir Thomas Kincaid",
                              Practice = "Orthopraxia",
-                             Phone = 611111,
-                             NextApp = new DateTime(1999, 6, 1)
+                             Phone = "611111",
+                             NextAppointment = "new DateTime(1999, 6, 1)"
                  }
                                               
          };

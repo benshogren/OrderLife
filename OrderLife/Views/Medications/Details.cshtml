@@ -1,0 +1,40 @@
+﻿@model OrderLife.Models.Medications
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Medications</legend>
+
+    <div class="display-label">Name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">Dosage</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Dosage)
+    </div>
+
+    <div class="display-label">Purpose</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Purpose)
+    </div>
+
+    <div class="display-label">Next Refill</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NextRefill)
+    </div>
+
+    <div class="display-label">Name Of Prescriber</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NameOfPrescriber)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -12,8 +12,8 @@ namespace OrderLife.Models
         public int ID { get; set; }
         public string Name { get; set; }
         public string Practice { get; set; }
-        public int Phone { get; set; }
-        public DateTime NextApp { get; set; }
+        public string Phone { get; set; }
+        public string NextAppointment { get; set; }
     }
     public class DoctorDBContext : DbContext
     {
