@@ -1,0 +1,74 @@
+﻿@model IEnumerable<OrderLife.Models.Finances>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Finances</h2>
+
+<table>
+    <tr>
+        <th>
+            Room
+        </th>
+        <th>
+            Utilities
+        </th>
+        <th>
+            Transport
+        </th>
+        <th>
+            Media
+        </th>
+        <th>
+            Debt
+        </th>
+        <th>
+            Other
+        </th>
+        <th>
+            Food
+        </th>
+        <th>
+            Income
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Room)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Utilities)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Transportation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Media)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Debt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Other)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Food)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Income)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+        </td>
+    </tr>
+}
+
+</table>
+
+<p>
+    @Html.ActionLink("Create New Financial Plan", "Create")
+</p>

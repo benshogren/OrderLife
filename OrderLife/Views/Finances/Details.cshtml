@@ -1,0 +1,55 @@
+﻿@model OrderLife.Models.Finances
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Finances</legend>
+
+    <div class="display-label">Room</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Room)
+    </div>
+
+    <div class="display-label">Utilities</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Utilities)
+    </div>
+
+    <div class="display-label">Transportation</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Transportation)
+    </div>
+
+    <div class="display-label">Media</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Media)
+    </div>
+
+    <div class="display-label">Debt</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Debt)
+    </div>
+
+    <div class="display-label">Other</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Other)
+    </div>
+
+    <div class="display-label">Food</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Food)
+    </div>
+
+    <div class="display-label">Income</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Income)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
