@@ -1,10 +1,10 @@
-﻿@model IEnumerable<OrderLife.Models.WeeklyDiet>
+﻿@model IEnumerable<OrderLife.Models.Recipes>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Recipe Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -12,21 +12,14 @@
 <table>
     <tr>
         <th>
-            StartDate
+            Name
         </th>
-        <th>
-            Goals
-        </th>
-        <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.StartDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Goals)
+            @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |

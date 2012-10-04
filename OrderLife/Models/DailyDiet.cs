@@ -11,6 +11,7 @@ namespace OrderLife.Models
         public int ID { get; set; }
         public string StartDate { get; set; }
         public string Goals { get; set; }
+        public string Method { get; set; } 
 
     }
     public class DailyDietDBContext : DbContext

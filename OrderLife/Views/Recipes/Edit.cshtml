@@ -1,4 +1,4 @@
-﻿@model OrderLife.Models.WeeklyDiet
+﻿@model OrderLife.Models.Recipes
 
 @{
     ViewBag.Title = "Edit";
@@ -12,24 +12,24 @@
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>WeeklyDiet</legend>
+        <legend>Recipes</legend>
 
         @Html.HiddenFor(model => model.ID)
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.StartDate)
+            @Html.LabelFor(model => model.Name)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.StartDate)
-            @Html.ValidationMessageFor(model => model.StartDate)
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Goals)
+            @Html.LabelFor(model => model.Recipe)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Goals)
-            @Html.ValidationMessageFor(model => model.Goals)
+            @Html.EditorFor(model => model.Recipe)
+            @Html.ValidationMessageFor(model => model.Recipe)
         </div>
 
         <p>

@@ -9,29 +9,29 @@ using OrderLife.Models;
 
 namespace OrderLife.Controllers
 { 
-    public class WeeklyDietController : Controller
+    public class RecipesController : Controller
     {
-        private WeeklyDietDBContext db = new WeeklyDietDBContext();
+        private RecipesDBContext db = new RecipesDBContext();
 
         //
-        // GET: /WeeklyDiet/
+        // GET: /Recipes/
 
         public ViewResult Index()
         {
-            return View(db.WeeklyDiet.ToList());
+            return View(db.Recipes.ToList());
         }
 
         //
-        // GET: /WeeklyDiet/Details/5
+        // GET: /Recipes/Details/5
 
         public ViewResult Details(int id)
         {
-            WeeklyDiet weeklydiet = db.WeeklyDiet.Find(id);
-            return View(weeklydiet);
+            Recipes recipes = db.Recipes.Find(id);
+            return View(recipes);
         }
 
         //
-        // GET: /WeeklyDiet/Create
+        // GET: /Recipes/Create
 
         public ActionResult Create()
         {
@@ -39,62 +39,62 @@ namespace OrderLife.Controllers
         } 
 
         //
-        // POST: /WeeklyDiet/Create
+        // POST: /Recipes/Create
 
         [HttpPost]
-        public ActionResult Create(WeeklyDiet weeklydiet)
+        public ActionResult Create(Recipes recipes)
         {
             if (ModelState.IsValid)
             {
-                db.WeeklyDiet.Add(weeklydiet);
+                db.Recipes.Add(recipes);
                 db.SaveChanges();
                 return RedirectToAction("Index");  
             }
 
-            return View(weeklydiet);
+            return View(recipes);
         }
         
         //
-        // GET: /WeeklyDiet/Edit/5
+        // GET: /Recipes/Edit/5
  
         public ActionResult Edit(int id)
         {
-            WeeklyDiet weeklydiet = db.WeeklyDiet.Find(id);
-            return View(weeklydiet);
+            Recipes recipes = db.Recipes.Find(id);
+            return View(recipes);
         }
 
         //
-        // POST: /WeeklyDiet/Edit/5
+        // POST: /Recipes/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(WeeklyDiet weeklydiet)
+        public ActionResult Edit(Recipes recipes)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(weeklydiet).State = EntityState.Modified;
+                db.Entry(recipes).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(weeklydiet);
+            return View(recipes);
         }
 
         //
-        // GET: /WeeklyDiet/Delete/5
+        // GET: /Recipes/Delete/5
  
         public ActionResult Delete(int id)
         {
-            WeeklyDiet weeklydiet = db.WeeklyDiet.Find(id);
-            return View(weeklydiet);
+            Recipes recipes = db.Recipes.Find(id);
+            return View(recipes);
         }
 
         //
-        // POST: /WeeklyDiet/Delete/5
+        // POST: /Recipes/Delete/5
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {            
-            WeeklyDiet weeklydiet = db.WeeklyDiet.Find(id);
-            db.WeeklyDiet.Remove(weeklydiet);
+            Recipes recipes = db.Recipes.Find(id);
+            db.Recipes.Remove(recipes);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

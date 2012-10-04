@@ -17,6 +17,9 @@
         <th>
             Goals
         </th>
+        <th>
+            Method
+        </th>
         <th></th>
     </tr>
 
@@ -28,6 +31,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.Goals)
         </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.Method)
+        </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
             @Html.ActionLink("Details", "Details", new { id=item.ID }) |
@@ -37,3 +43,24 @@
 }
 
 </table>
+
+<p>
+    @Html.ActionLink("Add Entry to Daily Diet", "Create", "DailyDietEntry")
+</p>
+
+<p>
+    Or would you prefer a 7-Day Diet Planner?
+</p>
+
+<p>
+    @Html.ActionLink("Add Entry to 7-Day Plan", "Create", "WeeklyDietEntry")
+</p>
+
+<p>
+    Add a diet-specific recipe to your recipe list?
+</p>
+
+<p>
+    @Html.ActionLink("Add Recipe", "Create", "Recipe")
+</p>
+

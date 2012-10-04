@@ -1,4 +1,4 @@
-﻿@model OrderLife.Models.WeeklyDiet
+﻿@model OrderLife.Models.Recipes
 
 @{
     ViewBag.Title = "Details";
@@ -7,16 +7,16 @@
 <h2>Details</h2>
 
 <fieldset>
-    <legend>WeeklyDiet</legend>
+    <legend>Recipes</legend>
 
-    <div class="display-label">StartDate</div>
+    <div class="display-label">Name</div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.StartDate)
+        @Html.DisplayFor(model => model.Name)
     </div>
 
-    <div class="display-label">Goals</div>
+    <div class="display-label">Recipe</div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Goals)
+        @Html.DisplayFor(model => model.Recipe)
     </div>
 </fieldset>
 <p>

@@ -29,6 +29,15 @@
             @Html.EditorFor(model => model.Goals)
             @Html.ValidationMessageFor(model => model.Goals)
         </div>
+          <div class="editor-label">
+            @Html.LabelFor(model => model.Method)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Method)
+            @Html.ValidationMessageFor(model => model.Method)
+        </div>
+
+
 
         <p>
             <input type="submit" value="Create" />

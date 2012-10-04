@@ -35,6 +35,7 @@ namespace OrderLife
         {
             Database.SetInitializer<DoctorDBContext>(new DoctorInitializer());
             Database.SetInitializer<ExercisesDBContext>(new ExercisesInitializer());
+            Database.SetInitializer<DailyDietDBContext>(new DailyDietInitializer());
             AreaRegistration.RegisterAllAreas();
 
             RegisterGlobalFilters(GlobalFilters.Filters);
