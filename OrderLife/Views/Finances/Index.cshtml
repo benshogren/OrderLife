@@ -32,6 +32,9 @@
         <th>
             Income
         </th>
+          <th>
+            Remainder
+        </th>
         <th></th>
     </tr>
 
@@ -61,8 +64,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.Income)
         </td>
+        <td></td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) 
         </td>
     </tr>
 }

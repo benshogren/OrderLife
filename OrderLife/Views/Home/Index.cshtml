@@ -2,12 +2,14 @@
     ViewBag.Title = "Home Page";
 }
 
-<h2>Feel free to order your life.</h2>
-<p>Would you like help managing your time?</p>
-    @Html.ActionLink("OrderTime", "Index", "Time")
-<p>Would you like to organize your health needs?</p>
-    @Html.ActionLink("OrderBody", "HealthHub1", "Health") (workouts, doctors and medicine, food and diets)
-<p>List accounts?</p>
-    @Html.ActionLink("OrderAccounts", "Index", "Accounts")
-<p>Or would you like a better handle on your finances?</p>
-    @Html.ActionLink("OrderMoney", "Index", "Finances")
+<h2>21st Century for the 18th Century Mind.</h2>
+
+<p>How do we spend our time in the 21st Century? Click for help managing your day.</p>
+<p>@Html.ActionLink("Order Time", "Index", "Time")</p>    
+<p>These days we spend less time on the farm, and so more time worrying about our bodies. Need help keeping track of exercise, diet, and other health concerns?</p>
+<p>@Html.ActionLink("Track Health Factors", "HealthHub1", "Health") (workouts, doctors and medicine, food and diets)</p>   
+<p>This is the era of instantaneous membership. The people of the 21st century maintain many working relationships on paper and online. Click to manage your accounts.</p>
+<p>@Html.ActionLink("Manage Accounts", "Index", "Accounts")</p>    
+<p>Where does all your money go? This simple method will help you keep a handle on your money.</p>
+<p>@Html.ActionLink("Handle Money", "Index", "Finances")</p>   
+<p></p>
