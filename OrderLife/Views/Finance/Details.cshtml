@@ -1,0 +1,115 @@
+﻿@model OrderLife.Models.Finances
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Finances</legend>
+
+    <div class="display-label">Room</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Room)
+    </div>
+
+    <div class="display-label">GasHouse</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.GasHouse)
+    </div>
+
+    <div class="display-label">Electricity</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Electricity)
+    </div>
+
+    <div class="display-label">Water</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Water)
+    </div>
+
+    <div class="display-label">OtherUtilities</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OtherUtilities)
+    </div>
+
+    <div class="display-label">CarPayment</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CarPayment)
+    </div>
+
+    <div class="display-label">CarInsurance</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CarInsurance)
+    </div>
+
+    <div class="display-label">GasCar</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.GasCar)
+    </div>
+
+    <div class="display-label">PublicTransportation</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PublicTransportation)
+    </div>
+
+    <div class="display-label">OtherTransportation</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OtherTransportation)
+    </div>
+
+    <div class="display-label">CellPhone</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CellPhone)
+    </div>
+
+    <div class="display-label">HousePhone</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HousePhone)
+    </div>
+
+    <div class="display-label">TVPlan</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TVPlan)
+    </div>
+
+    <div class="display-label">Internet</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Internet)
+    </div>
+
+    <div class="display-label">OtherMedia</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OtherMedia)
+    </div>
+
+    <div class="display-label">LoanPayments</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LoanPayments)
+    </div>
+
+    <div class="display-label">OtherMonthlyLoanPayments</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OtherMonthlyLoanPayments)
+    </div>
+
+    <div class="display-label">Other</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Other)
+    </div>
+
+    <div class="display-label">Food</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Food)
+    </div>
+
+    <div class="display-label">Income</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Income)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

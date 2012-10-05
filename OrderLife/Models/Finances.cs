@@ -11,18 +11,35 @@ namespace OrderLife.Models
     {
         public int ID { get; set; }
         public decimal Room { get; set; } 
-        public decimal Utilities { get; set; }
-        public decimal Transportation { get; set; }
-        public decimal Media { get; set; }
-        public decimal Debt { get; set; }
+
+        public decimal GasHouse { get; set; }
+        public decimal Electricity { get; set; }
+        public decimal Water { get; set; }
+        public decimal OtherUtilities { get; set; }
+
+        public decimal CarPayment { get; set; }
+        public decimal CarInsurance { get; set; }
+        public decimal GasCar { get; set; }
+        public decimal PublicTransportation { get; set; }
+        public decimal OtherTransportation { get; set; }
+
+        public decimal CellPhone { get; set; }
+        public decimal HousePhone { get; set; }
+        public decimal TVPlan { get; set; }
+        public decimal Internet { get; set; }
+        public decimal OtherMedia { get; set; }
+
+        public decimal LoanPayments { get; set; }
+        public decimal OtherMonthlyLoanPayments { get; set; }
+
         public decimal Other { get; set; }
         public decimal Food { get; set; }
         public decimal Income { get; set; }
 
-        public decimal LeftOver()
-        {
-            return new FinanceCalc().Calculate(Room, Utilities, Transportation, Media, Debt, Other, Food, Income);
-        }
+        //public decimal LeftOver()
+        //{
+        //    return new FinanceCalc().Calculate(Room, Utilities, Transportation, Media, Debt, Other, Food, Income);
+        //}
     }
     public class FinancesDBContext : DbContext
     {

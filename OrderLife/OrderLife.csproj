@@ -67,7 +67,7 @@
     <Compile Include="Controllers\DailyDietController.cs" />
     <Compile Include="Controllers\DailyDietEntryController.cs" />
     <Compile Include="Controllers\DoctorController.cs" />
-    <Compile Include="Controllers\FinancesController.cs" />
+    <Compile Include="Controllers\FinanceController.cs" />
     <Compile Include="Controllers\HealthController.cs" />
     <Compile Include="Controllers\HelloWorldController.cs" />
     <Compile Include="Controllers\HobbiesController.cs" />
@@ -91,6 +91,7 @@
     <Compile Include="Models\DoctorInitializer.cs" />
     <Compile Include="Models\Exercises.cs" />
     <Compile Include="Models\ExercisesInitializer.cs" />
+    <Compile Include="Models\FinanceInitializer.cs" />
     <Compile Include="Models\Finances.cs" />
     <Compile Include="Models\Hobbies.cs" />
     <Compile Include="Models\Medications.cs" />
@@ -321,21 +322,6 @@
     <Content Include="Views\Accounts\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Finances\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Finances\Details.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Finances\Create.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Finances\Edit.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Finances\Delete.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Hobbies\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -349,6 +335,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Hobbies\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Finance\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Finance\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Finance\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Finance\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Finance\Delete.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

@@ -9,12 +9,12 @@ using OrderLife.Models;
 
 namespace OrderLife.Controllers
 { 
-    public class FinancesController : Controller
+    public class FinanceController : Controller
     {
         private FinancesDBContext db = new FinancesDBContext();
 
         //
-        // GET: /Finances/
+        // GET: /Finance/
 
         public ViewResult Index()
         {
@@ -22,7 +22,7 @@ namespace OrderLife.Controllers
         }
 
         //
-        // GET: /Finances/Details/5
+        // GET: /Finance/Details/5
 
         public ViewResult Details(int id)
         {
@@ -31,7 +31,7 @@ namespace OrderLife.Controllers
         }
 
         //
-        // GET: /Finances/Create
+        // GET: /Finance/Create
 
         public ActionResult Create()
         {
@@ -39,7 +39,7 @@ namespace OrderLife.Controllers
         } 
 
         //
-        // POST: /Finances/Create
+        // POST: /Finance/Create
 
         [HttpPost]
         public ActionResult Create(Finances finances)
@@ -55,7 +55,7 @@ namespace OrderLife.Controllers
         }
         
         //
-        // GET: /Finances/Edit/5
+        // GET: /Finance/Edit/5
  
         public ActionResult Edit(int id)
         {
@@ -64,7 +64,7 @@ namespace OrderLife.Controllers
         }
 
         //
-        // POST: /Finances/Edit/5
+        // POST: /Finance/Edit/5
 
         [HttpPost]
         public ActionResult Edit(Finances finances)
@@ -79,7 +79,7 @@ namespace OrderLife.Controllers
         }
 
         //
-        // GET: /Finances/Delete/5
+        // GET: /Finance/Delete/5
  
         public ActionResult Delete(int id)
         {
@@ -88,7 +88,7 @@ namespace OrderLife.Controllers
         }
 
         //
-        // POST: /Finances/Delete/5
+        // POST: /Finance/Delete/5
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
