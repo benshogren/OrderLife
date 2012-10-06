@@ -67,11 +67,11 @@ If you have any hobbies or anything left over that you want to make time for, pl
             <td>
             @if (Model.calendarTableData[day, time] != null) {
                 @Html.ActionLink(Model.calendarTableData[day, time].AppointmentValue, "Edit", new { id = Model.calendarTableData[day, time].ID })
-                using (Html.BeginForm("Delete", "Time",new RouteValueDictionary { { "id", @Model.calendarTableData[day, time].ID }})) {
+                using (Html.BeginForm("Delete", "Time", new RouteValueDictionary { { "id", @Model.calendarTableData[day, time].ID }})) {
                     <input type="submit" value="Delete" /> 
                 }
             } else { 
-                @Html.ActionLink("________", "Create")
+                @Html.ActionLink("________", "Create", new {Day= day, Time = time})
             }
             </td>
         }

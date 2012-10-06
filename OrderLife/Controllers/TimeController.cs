@@ -53,9 +53,16 @@ namespace OrderLife.Controllers
 
         //
         // GET: /Time/Create
-        public ActionResult Create()
-        {
-            return View();
+        //public ActionResult Create()
+        //{
+        //    return View();
+        //}
+
+        public ActionResult Create(int Day, int Time) {
+            var Apps = new Appointments();
+            Apps.Day = Day;
+            Apps.Time = Time; 
+            return View(Apps);
         } 
 
         //
