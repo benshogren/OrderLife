@@ -19,7 +19,7 @@ namespace OrderLife.Controllers
 
         //
         // GET: /Time/
-        public ViewResult Index()
+        public ViewResult Index(int Step = 1)
         {
             var appointments = appDb.Appointments.ToList();
             var hobbies = hdDb.Hobbies.ToList();
@@ -40,6 +40,7 @@ namespace OrderLife.Controllers
             vms.appointments = appviewmodels;
             vms.hobbies = hobbies;
             vms.calendarTableData = calData;
+            vms.Step = Step;
             return View(vms);
         }
 

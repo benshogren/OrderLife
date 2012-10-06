@@ -14,7 +14,15 @@
     <fieldset>
         <legend>Appointments</legend>
 
-     
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Day) 
+            @Html.DisplayFor(model=> model.Day)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Time)
+            @Html.DisplayFor(model=> model.Time)
+        </div>
 
 
         <div class="editor-label">

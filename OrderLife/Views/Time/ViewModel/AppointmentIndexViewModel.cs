@@ -11,5 +11,6 @@ namespace OrderLife.Views.Time.ViewModel
         public List<AppointmentViewModel> appointments;
         public List<Hobbies> hobbies;
         public AppointmentViewModel[,] calendarTableData;
+        public int Step;
     }
 }
