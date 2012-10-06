@@ -24,12 +24,11 @@ If you have any hobbies or anything left over that you want to make time for, pl
 <table>
 
 
-@foreach (var item in Model.appointments) {
+@*@foreach (var item in Model.appointments) {
     <tr> 
         <td>
             @Html.DisplayFor(modelItem => item.AppointmentValue)
             @Html.DisplayFor(modelItem => item.DayName)
-         
             @Html.DisplayFor(modelItem => item.Time)
         </td>
   
@@ -39,7 +38,7 @@ If you have any hobbies or anything left over that you want to make time for, pl
             @Html.ActionLink("Delete", "Delete", new { id = item.ID })
         </td>
     </tr>
-}
+}*@
 
 </table>
 
@@ -67,13 +66,18 @@ If you have any hobbies or anything left over that you want to make time for, pl
         @for (var day = 0; day < 7; day++) {
             <td>
             @if (Model.calendarTableData[day, time] != null) {
-                @Html.DisplayFor(m => m.calendarTableData[day, time].AppointmentValue)
-            } 
+                @Html.ActionLink(Model.calendarTableData[day, time].AppointmentValue, "Edit", new { id = Model.calendarTableData[day, time].ID })
+                using (Html.BeginForm("Delete", "Time",new RouteValueDictionary { { "id", @Model.calendarTableData[day, time].ID }})) {
+                    <input type="submit" value="Delete" /> 
+                }
+            } else { 
+                @Html.ActionLink("________", "Create")
+            }
             </td>
         }
         </tr>
     }
-   
+    
 </table>
 
 
