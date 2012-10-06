@@ -6,6 +6,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using OrderLife.Models;
+using OrderLife.Views.Time.ViewModel;
+using OrderLife.Domain;
 
 namespace OrderLife.Controllers
 { 
@@ -18,8 +20,20 @@ namespace OrderLife.Controllers
 
         public ViewResult Index()
         {
+            var appointments = db.Appointments.ToList();
+            var appviewmodels = new List<AppointmentViewModel>();
+
+            foreach (var appointment in appointments) { 
+                var a = new AppointmentViewModel();
+                a.Day = appointment.Day;
+                a.Time = appointment.Time;
+                a.AppointmentValue = appointment.AppointmentValue;
+                a.ID = appointment.ID;
+                a.DayName = new DatePretty().Prettify(a.Day);
+                appviewmodels.Add(a);
+            }
             
-            return View(db.Appointments.ToList());
+            return View(appviewmodels);
         }
 
         //

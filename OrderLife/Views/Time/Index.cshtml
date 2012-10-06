@@ -1,4 +1,4 @@
-﻿@model IEnumerable<OrderLife.Models.Appointments>
+﻿@model IEnumerable<OrderLife.Views.Time.ViewModel.AppointmentViewModel>
 
 @{
     ViewBag.Title = "Index";
@@ -28,29 +28,7 @@ If you have any hobbies or anything left over that you want to make time for, pl
     <tr> 
         <td>
             @Html.DisplayFor(modelItem => item.AppointmentValue)
-            @switch(item.Day){
-                case 1:
-                    <p>Sunday</p>;
-                    break;
-                case 2:
-                    <p>Monday</p>;
-                    break;
-                case 3:
-                    <p>Tuesday</p>;
-                    break;
-                case 4:
-                    <p>Wednesday</p>;
-                    break;
-                case 5:
-                    <p>Thursday</p>;
-                    break;
-                case 6:
-                    <p>Friday</p>;
-                    break;
-                case 7:
-                    <p>Saturday</p>;
-                    break;
-            }
+            @Html.DisplayFor(modelItem => item.DayName)
          
             @Html.DisplayFor(modelItem => item.Time)
         </td>

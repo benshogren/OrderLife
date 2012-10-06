@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data.Entity;
+using OrderLife.Views.Time.ViewModel;
+
 
 namespace OrderLife.Models
 {
@@ -12,10 +14,7 @@ namespace OrderLife.Models
         public int Day { get; set; }
         public int Time { get; set; }
         public string AppointmentValue { get; set; }
-
-       
-  
-       
+      
     }
     public class AppointmentsDBContext : DbContext
     {
