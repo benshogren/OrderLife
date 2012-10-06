@@ -8,21 +8,23 @@ using System.Web.Mvc;
 using OrderLife.Models;
 using OrderLife.Views.Time.ViewModel;
 using OrderLife.Domain;
+using System.Text;
 
 namespace OrderLife.Controllers
 { 
     public class TimeController : Controller
     {
-        private AppointmentsDBContext db = new AppointmentsDBContext();
+        private AppointmentsDBContext appDb = new AppointmentsDBContext();
+        private HobbiesDBContext hdDb = new HobbiesDBContext();
 
         //
         // GET: /Time/
-
         public ViewResult Index()
         {
-            var appointments = db.Appointments.ToList();
+            var appointments = appDb.Appointments.ToList();
+            var hobbies = hdDb.Hobbies.ToList();
             var appviewmodels = new List<AppointmentViewModel>();
-
+            var calData = new AppointmentViewModel[7, 24];
             foreach (var appointment in appointments) { 
                 var a = new AppointmentViewModel();
                 a.Day = appointment.Day;
@@ -31,23 +33,26 @@ namespace OrderLife.Controllers
                 a.ID = appointment.ID;
                 a.DayName = new DatePretty().Prettify(a.Day);
                 appviewmodels.Add(a);
+                calData[a.Day-1, a.Time] = a;
             }
             
-            return View(appviewmodels);
+            var vms = new AppointmentIndexViewModel();
+            vms.appointments = appviewmodels;
+            vms.hobbies = hobbies;
+            vms.calendarTableData = calData;
+            return View(vms);
         }
 
         //
         // GET: /Time/Details/5
-
         public ViewResult Details(int id)
         {
-            Appointments appointments = db.Appointments.Find(id);
+            Appointments appointments = appDb.Appointments.Find(id);
             return View(appointments);
         }
 
         //
         // GET: /Time/Create
-
         public ActionResult Create()
         {
             return View();
@@ -55,14 +60,13 @@ namespace OrderLife.Controllers
 
         //
         // POST: /Time/Create
-
         [HttpPost]
         public ActionResult Create(Appointments appointments)
         {
             if (ModelState.IsValid)
             {
-                db.Appointments.Add(appointments);
-                db.SaveChanges();
+                appDb.Appointments.Add(appointments);
+                appDb.SaveChanges();
                 return RedirectToAction("Index");  
             }
 
@@ -74,7 +78,7 @@ namespace OrderLife.Controllers
  
         public ActionResult Edit(int id)
         {
-            Appointments appointments = db.Appointments.Find(id);
+            Appointments appointments = appDb.Appointments.Find(id);
             return View(appointments);
         }
 
@@ -86,8 +90,8 @@ namespace OrderLife.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(appointments).State = EntityState.Modified;
-                db.SaveChanges();
+                appDb.Entry(appointments).State = EntityState.Modified;
+                appDb.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(appointments);
@@ -98,7 +102,7 @@ namespace OrderLife.Controllers
  
         public ActionResult Delete(int id)
         {
-            Appointments appointments = db.Appointments.Find(id);
+            Appointments appointments = appDb.Appointments.Find(id);
             return View(appointments);
         }
 
@@ -108,15 +112,15 @@ namespace OrderLife.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {            
-            Appointments appointments = db.Appointments.Find(id);
-            db.Appointments.Remove(appointments);
-            db.SaveChanges();
+            Appointments appointments = appDb.Appointments.Find(id);
+            appDb.Appointments.Remove(appointments);
+            appDb.SaveChanges();
             return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
         {
-            db.Dispose();
+            appDb.Dispose();
             base.Dispose(disposing);
         }
 

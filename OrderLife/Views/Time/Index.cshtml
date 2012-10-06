@@ -1,4 +1,4 @@
-﻿@model IEnumerable<OrderLife.Views.Time.ViewModel.AppointmentViewModel>
+﻿@model OrderLife.Views.Time.ViewModel.AppointmentIndexViewModel
 
 @{
     ViewBag.Title = "Index";
@@ -24,7 +24,7 @@ If you have any hobbies or anything left over that you want to make time for, pl
 <table>
 
 
-@foreach (var item in Model) {
+@foreach (var item in Model.appointments) {
     <tr> 
         <td>
             @Html.DisplayFor(modelItem => item.AppointmentValue)
@@ -43,6 +43,18 @@ If you have any hobbies or anything left over that you want to make time for, pl
 
 </table>
 
+<table>
+@foreach (var item in Model.hobbies) {
+    <tr> 
+        <td>
+            @Html.DisplayFor(modelItem => item.ID)
+            @Html.DisplayFor(modelItem => item.Journal)
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+    </tr>
+}
+</table>
+
 
 <h2>Schedule</h2>
 
@@ -50,70 +62,18 @@ If you have any hobbies or anything left over that you want to make time for, pl
     <tr>
         <th></th><th>Sunday</th><th>Monday</th> <th>Tuesday</th><th>Wednesday</th> <th>Thursday</th><th>Friday</th><th>Saturday</th>
     </tr>
+    @for (var time = 0; time < 24; time++) {
+        <tr><td>@((time+1)%12)</td>
+        @for (var day = 0; day < 7; day++) {
+            <td>
+            @if (Model.calendarTableData[day, time] != null) {
+                @Html.DisplayFor(m => m.calendarTableData[day, time].AppointmentValue)
+            } 
+            </td>
+        }
+        </tr>
+    }
    
-    <tr>
-        <td>4:00 AM</td>
-        <td>
-
-        </td> 
-        <td>
-            
-        </td>
-    </tr>
-    <tr>
-        <td>5:00 AM</td>
-    </tr>
-    <tr>
-        <td>6:00 AM</td>
-    </tr>
-    <tr>
-        <td>7:00 AM</td>
-    </tr>
-    <tr>
-        <td>8:00 AM</td>
-    </tr>
-    <tr>
-        <td>9:00 AM</td>
-    </tr>
-    <tr>
-        <td>10:00 AM</td>
-    </tr>
-    <tr>
-        <td>11:00 AM</td>
-    </tr>
-    <tr>
-        <td>12:00 PM</td>
-    </tr>
-    <tr>
-        <td>1:00 PM</td>
-    </tr>
-    <tr>
-        <td>2:00 PM</td>
-    </tr>
-    <tr>
-        <td>3:00 PM</td>
-    </tr>
-    <tr>
-        <td>4:00 PM</td>
-    </tr>
-    <tr>
-        <td>5:00 PM</td>
-    </tr>
-    <tr>
-        <td>6:00 PM</td>
-    </tr>
-    <tr>
-        <td>7:00 PM</td>
-    </tr>
-    <tr>
-        <td>8:00 PM</td>
-    </tr>
-    <tr>
-        <td>9:00 PM</td>
-    </tr>
-   
-
-
 </table>
 
 
