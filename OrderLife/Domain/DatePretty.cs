@@ -11,26 +11,26 @@ namespace OrderLife.Domain
         {
             switch (Day)
             {
-                case 1:
+                case 0:
                     return "Sunday";
                     break;
-                case 2:
+                case 1:
                     return "Monday";
                     break;
-                case 3:
+                case 2:
                     return "Tuesday";
                     break;
+                case 3:
+                    return "Wednesday";
+                    break;
                 case 4:
-                    return "Wed";
+                    return "Thursday";
                     break;
                 case 5:
-                    return "Thurds";
+                    return "Friday";
                     break;
                 case 6:
-                    return "Fri";
-                    break;
-                case 7:
-                    return "Sat";
+                    return "Saturday";
                     break;
                 default:
                     return "Not a day";

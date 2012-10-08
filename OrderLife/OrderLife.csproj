@@ -97,6 +97,7 @@
     <Compile Include="Models\Hobbies.cs" />
     <Compile Include="Models\Medications.cs" />
     <Compile Include="Models\Recipes.cs" />
+    <Compile Include="Models\SchedInitializer.cs" />
     <Compile Include="Models\WeeklyDietEntry.cs" />
     <Compile Include="Models\WorkoutDescription.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

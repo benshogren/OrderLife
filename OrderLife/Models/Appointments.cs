@@ -14,7 +14,7 @@ namespace OrderLife.Models
         public int Day { get; set; }
         public int Time { get; set; }
         public string AppointmentValue { get; set; }
-      
+        public string DayName { get; set; }
     }
     public class AppointmentsDBContext : DbContext
     {
