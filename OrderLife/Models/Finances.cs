@@ -9,6 +9,8 @@ namespace OrderLife.Models
 {
     public class Finances
     {
+        public int Step;
+
         public int ID { get; set; }
         public decimal Room { get; set; } 
         public decimal GasHouse { get; set; }

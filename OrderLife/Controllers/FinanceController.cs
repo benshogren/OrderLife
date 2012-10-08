@@ -66,9 +66,34 @@ namespace OrderLife.Controllers
         //
         // GET: /Finance/Create
 
-        public ActionResult Create()
+        public ActionResult Create(decimal Room, decimal GasHouse, decimal Electricity, decimal Water, decimal OtherUtilities, 
+            decimal CarPayment, decimal CarInsurance, decimal GasCar, decimal PublicTransportation, decimal OtherTransportation, 
+            decimal CellPhone, decimal HousePhone, decimal TVPlan, decimal Internet, decimal OtherMedia, decimal LoanPayments,
+            decimal OtherMonthlyLoanPayments, decimal Other, decimal Food, decimal Income) 
         {
-            return View();
+            var Budget = new Finances();
+               Budget.Room = Room;
+               Budget.GasHouse = GasHouse;
+               Budget.Electricity = Electricity;
+               Budget.Water = Water;
+               Budget.OtherUtilities = OtherUtilities;
+               Budget.CarPayment = CarPayment;
+               Budget.CarInsurance = CarInsurance;
+               Budget.GasCar = GasCar;
+               Budget.PublicTransportation = PublicTransportation;
+               Budget.OtherTransportation = OtherTransportation;
+               Budget.CellPhone = CellPhone;
+               Budget.HousePhone = HousePhone;
+               Budget.TVPlan = TVPlan;
+               Budget.Internet = Internet;
+               Budget.OtherMedia = OtherMedia;
+               Budget.LoanPayments = LoanPayments;
+               Budget.OtherMonthlyLoanPayments = OtherMonthlyLoanPayments;
+               Budget.Other = Other;
+               Budget.Food = Food;
+               Budget.Income = Income;
+               Budget.Step = 1;
+            return View(Budget);
         } 
 
         //
