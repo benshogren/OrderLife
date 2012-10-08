@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using OrderLife.Models;
+using OrderLife.Views.Finance.ViewModels;
 
 namespace OrderLife.Controllers
 { 
@@ -16,9 +17,41 @@ namespace OrderLife.Controllers
         //
         // GET: /Finance/
 
-        public ViewResult Index()
-        {
-            return View(db.Finances.ToList());
+        public ViewResult Index(int Step = 1) {
+            var financebudgetlist = db.Finances.ToList();
+            var financesviewmods = new List<FinancesViewModel>();
+            
+            foreach (var budget in financebudgetlist) {
+                var FViewMod = new FinancesViewModel();
+                    FViewMod.ID = budget.ID;
+                    FViewMod.Room = budget.Room;
+                    FViewMod.GasHouse = budget.GasHouse;
+                    FViewMod.Electricity = budget.Electricity;
+                    FViewMod.Water = budget.Water;
+                    FViewMod.OtherUtilities = budget.OtherUtilities;
+                    FViewMod.CarPayment = budget.CarPayment;
+                    FViewMod.CarInsurance = budget.CarInsurance;
+                    FViewMod.GasCar = budget.GasCar;
+                    FViewMod.PublicTransportation = budget.PublicTransportation;
+                    FViewMod.OtherTransportation = budget.OtherTransportation;
+                    FViewMod.CellPhone = budget.CellPhone;
+                    FViewMod.HousePhone = budget.HousePhone;
+                    FViewMod.TVPlan = budget.TVPlan;
+                    FViewMod.Internet = budget.Internet;
+                    FViewMod.OtherMedia = budget.OtherMedia;
+                    FViewMod.LoanPayments = budget.LoanPayments;
+                    FViewMod.OtherMonthlyLoanPayments = budget.OtherMonthlyLoanPayments;
+                    FViewMod.Other = budget.Other;
+                    FViewMod.Food = budget.Food;
+                    FViewMod.Income = budget.Income;
+                financesviewmods.Add(FViewMod);
+            }
+
+            var financeVMIndex = new FinancesViewModelIndex();
+            financeVMIndex.finances = financesviewmods;
+            //financeVMIndex.budgetviewmodel = ViewModel;
+            financeVMIndex.Step = Step;
+            return View(financeVMIndex);
         }
 
         //

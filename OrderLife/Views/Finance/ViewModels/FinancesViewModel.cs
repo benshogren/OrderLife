@@ -2,15 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Data.Entity;
-using OrderLife.Domain;
 
-namespace OrderLife.Models
-{
-    public class Finances
-    {
+namespace OrderLife.Views.Finance.ViewModels {
+    public class FinancesViewModel {
         public int ID { get; set; }
-        public decimal Room { get; set; } 
+        public decimal Room { get; set; }
         public decimal GasHouse { get; set; }
         public decimal Electricity { get; set; }
         public decimal Water { get; set; }
@@ -30,10 +26,5 @@ namespace OrderLife.Models
         public decimal Other { get; set; }
         public decimal Food { get; set; }
         public decimal Income { get; set; }
-
-    }
-    public class FinancesDBContext : DbContext
-    {
-        public DbSet<Finances> Finances { get; set; }
     }
 }

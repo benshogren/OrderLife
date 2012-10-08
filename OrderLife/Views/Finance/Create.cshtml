@@ -13,7 +13,62 @@
     @Html.ValidationSummary(true)
     <fieldset>
         <legend>Finances</legend>
+        @switch (Model.Step) { 
+            case 1:
+              <p>If you are still following this tutorial, I can only assume it is because, as a person from the 18th century, you cannot operate a computer
+and so have been hitting random keys and ended up  here accidentally. BUT while you're here, it may help you to acquaint yourself with typical
+21st century expenses.</p><p>You are about to make a bare-bones budget. It can be 100% accurate to your situation, if the numbers you submit are 100% accurate.</p> 
+<p>Some of these general expenses may not apply to you, in which case submit a $0 for that expense. And you may have some expenses that are not
+listed, which you can add up and place in the 'Other' category.</p>
+                break;
+            case 2:
+            <p>How much do you pay for your housing every month (rent or mortgage)?</p> 
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Room)
+            @Html.ValidationMessageFor(model => model.Room)
+        </div>
+       break;
+            case 3:
 
+       break;
+            case 4:
+
+       break;
+            case 5:
+
+       break;
+            case 6:
+
+       break;
+
+            default: 
+                
+                <div class="editor-field">
+            @Html.EditorFor(model => model.Room)
+</div>
+            break;
+        
+
+        }
+        
+
+      
+
+
+<p>How much for utilities?</p>
+<p>How much do you pay for transportation each month?</p>
+<p>What are you monthly media expenses?</p>
+<p>Do you make monthly loan payments?</p>
+<p>If you have monthly food budget, plug in the number:</p>
+<p>Do you have any other monthly expenses?</p>
+<p>How much do you make every month (after taxes)?</p>
+<p>Behold your rough money plot. You're becoming more on-the-ball already. How about we take a look at your health?</p>
+
+        @if (Model.Step < 6) {
+            @Html.ActionLink("Next", "Index", new { Step = Model.Step + 1 });
+        }
+            
+            
         <div class="editor-label">
             @Html.LabelFor(model => model.Room)
         </div>

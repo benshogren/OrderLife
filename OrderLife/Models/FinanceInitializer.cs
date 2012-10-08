@@ -10,26 +10,27 @@ namespace OrderLife.Models
         {
             var Finances = new List<Finances> {  
   
-               new Finances {   Room = 700,
-                                GasHouse = 75,
-                                Electricity = 100,
-                                Water = 40,
+               new Finances {   
+                                Room = 0,
+                                GasHouse = 0,
+                                Electricity = 0,
+                                Water = 0,
                                 OtherUtilities = 0,
-                                CarPayment = 130,
-                                CarInsurance = 75,
-                                GasCar = 75,
+                                CarPayment = 0,
+                                CarInsurance = 0,
+                                GasCar = 0,
                                 PublicTransportation = 0,
                                 OtherTransportation = 0,
-                                CellPhone = 30,
+                                CellPhone = 0,
                                 HousePhone = 0,
-                                TVPlan = 20,
-                                Internet = 40,
+                                TVPlan = 0,
+                                Internet = 0,
                                 OtherMedia = 0,
-                                LoanPayments = 120,
+                                LoanPayments = 0,
                                 OtherMonthlyLoanPayments = 0,
                                 Other = 0,
-                                Food = 200,
-                                Income = 2500}
+                                Food = 0,
+                                Income = 0}
              };
 
             Finances.ForEach(d => context.Finances.Add(d));
