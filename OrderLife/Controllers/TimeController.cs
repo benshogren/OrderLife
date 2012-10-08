@@ -63,6 +63,7 @@ namespace OrderLife.Controllers
             var Apps = new Appointments();
             Apps.Day = Day;
             Apps.Time = Time; 
+            var DayName = new DatePretty().Prettify(Day);
             return View(Apps);
         } 
 

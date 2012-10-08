@@ -34,27 +34,21 @@
 }
 
 
-<h2>Entries</h2>
-
-<p>
-    @Html.ActionLink("Add Entry", "Create")
-</p>
-
 <table>
 
 
-@*@foreach (var item in Model.appointments) {
+@*@foreach (var item in model.appointments) {
     <tr> 
         <td>
-            @Html.DisplayFor(modelItem => item.AppointmentValue)
-            @Html.DisplayFor(modelItem => item.DayName)
-            @Html.DisplayFor(modelItem => item.Time)
+            @html.displayfor(modelitem => item.appointmentvalue)
+            @html.displayfor(modelitem => item.dayname)
+            @html.displayfor(modelitem => item.time)
         </td>
   
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            @html.actionlink("edit", "edit", new { id = item.id }) |
+            @html.actionlink("details", "details", new { id = item.id }) |
+            @html.actionlink("delete", "delete", new { id = item.id })
         </td>
     </tr>
 }*@
@@ -80,8 +74,19 @@
     <tr>
         <th></th><th>Sunday</th><th>Monday</th> <th>Tuesday</th><th>Wednesday</th> <th>Thursday</th><th>Friday</th><th>Saturday</th>
     </tr>
-    @for (var time = 0; time < 24; time++) {
-        <tr><td>@((time + 1) % 12)</td>
+    @for (var time = 6; time < 24; time++) {
+        <tr><td>
+            @if (time == 24 || time == 12) {
+                <div>12</div>
+            } else {
+                @((time) % 12) 
+            }
+            @if (time < 12) {
+                <div>:00 AM</div>
+            } else { 
+                <div>:00 PM</div>
+            }
+            </td>
         @for (var day = 0; day < 7; day++) {
             <td>
             @if (Model.calendarTableData[day, time] != null && !String.IsNullOrEmpty(Model.calendarTableData[day, time].AppointmentValue)) {
