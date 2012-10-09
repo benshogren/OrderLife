@@ -1,79 +1,64 @@
-﻿@model IEnumerable<OrderLife.Models.Exercises>
+﻿@model OrderLife.Views.Health.ViewModels.ExerciseViewModelIndex
 
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Exercise Regimen</h2>
+<h2>My Exercise Plan</h2>
 
 <p>As said previously, because many of us lead quite sedintary lives, now, we've had to invent this thing called "exercise" to keep our bodies
 from wasting away into blubber. This page will let you plan an exercise routine and fit it into your weekly schedule.</p>
 <p></p>
-<p></p
 
-<a href="#" id="clicker">CLicker</a>
-<p>
-    @Html.ActionLink("Add Exercise", "Create")
-</p>
-<table id="timestable">
-    <tr>
-        <th>
-            Day
-        </th>
-        <th>
-            Time
-        </th>
-        <th>
-            Exercise
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Day)
-        </td>
-        <td class="times">
-            @Html.DisplayFor(modelItem => item.Time)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Exercise)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
+@foreach (var item in Model.workouts) {     
+    <p><b>Name of Plan:</b> @Html.DisplayFor(modelItem => item.Name)</p>      
+    <p><b>Description:</b> @Html.DisplayFor(modelItem => item.Description)</p>
+ 
+    @Html.ActionLink("Add new Name and Description", "Create", "Workout")
+     
+    @Html.ActionLink("Edit", "Edit", new { id=item.ID }) 
+            
+    @Html.ActionLink("Details", "Details", new { id=item.ID }) 
+    @Html.ActionLink("Delete", "Delete", new { id=item.ID })
 }
-</table>
-<p> </p>
-<p> </p>
-<p> </p>
+
+
 <table border="1">
     <tr>
-        <th></th><th>Sunday</th><th></th><th>Monday</th><th></th><th>Tuesday</th><th></th><th>Wednesday</th><th></th>
-        <th>Thursday</th><th></th><th>Friday</th><th></th><th>Saturday</th>
+        <th></th><th>Sunday</th><th>Monday</th> <th>Tuesday</th><th>Wednesday</th> <th>Thursday</th><th>Friday</th><th>Saturday</th>
     </tr>
-</table>
-<script type="text/javascript">
-    var sumTimes = function () {
-        //event.preventDefault();
-        var times = $(".times");
-        var sum = 0;
-        for (var x = 0; x <= times.length - 1; x++) {
-            var t = parseInt($(times[x]).text());
-            sum = sum + t;
+    
+    @for (var time = 6; time < 24; time++) {
+        <tr><td>
+            @if (time == 24 || time == 12) {
+                <div>12</div>
+            } else {
+                @((time) % 12) 
+            }
+            @if (time < 12) {
+                <div>:00 AM</div>
+            } else { 
+                <div>:00 PM</div>
+            }
+            </td>
+        @for (var day = 0; day < 7; day++) {
+            <td>
+            @if (Model.TableData[day, time] != null && !String.IsNullOrEmpty(Model.TableData[day, time].Exercise)) {
+                @Html.ActionLink(Model.TableData[day, time].Exercise, "Edit", new { id = Model.TableData[day, time].ID })
+                using (Html.BeginForm("Delete", "Health", new RouteValueDictionary { { "id", @Model.TableData[day, time].ID } })) {
+                    <input type="submit" value="Delete" /> 
+                }
+            } else { 
+                @Html.ActionLink("________", "Create", new { Day = day, Time = time })
+            }
+            </td>
         }
-        return sum;
-    };
-    //$("#clicker").click(sumTimes);
-    $(document).ready(function(){
-        var sum = sumTimes();
-        $('#timestable tr:last').after('<tr><td>Total:</td><td>' + sum + '</td></tr>');
-    });
-</script>
+        </tr>
+    }
+    
+</table>
+
 
 

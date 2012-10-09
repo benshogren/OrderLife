@@ -35,27 +35,6 @@
 
 
 <table>
-
-
-@*@foreach (var item in model.appointments) {
-    <tr> 
-        <td>
-            @html.displayfor(modelitem => item.appointmentvalue)
-            @html.displayfor(modelitem => item.dayname)
-            @html.displayfor(modelitem => item.time)
-        </td>
-  
-        <td>
-            @html.actionlink("edit", "edit", new { id = item.id }) |
-            @html.actionlink("details", "details", new { id = item.id }) |
-            @html.actionlink("delete", "delete", new { id = item.id })
-        </td>
-    </tr>
-}*@
-
-</table>
-
-<table>
 @foreach (var item in Model.hobbies) {
     <tr> 
         <td>

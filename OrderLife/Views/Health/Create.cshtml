@@ -13,62 +13,17 @@
     @Html.ValidationSummary(true)
     <fieldset>
         <legend>Exercises</legend>
+       
         <div class="editor-label">
-            @Html.LabelFor(model => model.Day)
-        </div>
-        <div class="editor-field">
-          <select name="Day">
-            <option value= "1" label="Sunday" / >
-            <option value= "2" label="Monday" / >
-            <option value= "3" label="Tuesday" / >
-            <option value= "4" label="Wednesday" / >
-            <option value= "5" label="Thursday" / >
-            <option value= "6" label="Friday" / >
-            <option value= "7" label="Saturday" / >
-            </select>
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Time)
-        </div>
-        <div class="editor-field">
-            <select name="Time">
-                <option value= "1" label="1am" / >
-                <option value= "2" label="2am" / >
-                <option value= "3" label="3am" / >
-                <option value= "4" label="4am" / >
-                <option value= "5" label="5am" / >
-                <option value= "6" label="6am" / >
-                <option value= "7" label="7am" / >
-                <option value= "8" label="8am" / >
-                <option value= "9" label="9am" / >
-                <option value= "10" label="10am" / >
-                <option value= "11" label="11am" / >
-                <option value= "12" label="12am" / >
-                <option value= "1" label="1pm" / >
-                <option value= "2" label="2pm" / >
-                <option value= "3" label="3pm" / >
-                <option value= "4" label="4pm" / >
-                <option value= "5" label="5pm" / >
-                <option value= "6" label="6pm" / >
-                <option value= "7" label="7pm" / >
-                <option value= "8" label="8pm" / >
-                <option value= "9" label="9pm" / >
-                <option value= "10" label="10pm" / >
-                <option value= "11" label="11pm" / >
-                <option value= "12" label="12pm" / >
-
-
-            </select>
-        </div>
-
-        <div class="editor-label">
-            <div>Exercise(s)</div>
+            <div>
+                Schedule what for <b>@Html.DisplayFor(model=> model.DayName) @Html.DisplayFor(model=> model.Time):00?</b>
+            </div>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Exercise)
             @Html.ValidationMessageFor(model => model.Exercise)
         </div>
+     
 
         <p>
             <input type="submit" value="Add" />

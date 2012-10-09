@@ -11,7 +11,7 @@ namespace OrderLife.Controllers
 { 
     public class WorkoutController : Controller
     {
-        private WorkoutDesciptionDBContext db = new WorkoutDesciptionDBContext();
+        private WorkoutDescriptionDBContext db = new WorkoutDescriptionDBContext();
 
         //
         // GET: /Workout/
