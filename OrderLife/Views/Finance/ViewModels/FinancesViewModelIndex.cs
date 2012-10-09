@@ -7,7 +7,6 @@ using OrderLife.Models;
 namespace OrderLife.Views.Finance.ViewModels {
     public class FinancesViewModelIndex {
         public List<FinancesViewModel> finances;
-        public int Step;
         public FinancesViewModel[,] budgetviewmodel;
     }
 }

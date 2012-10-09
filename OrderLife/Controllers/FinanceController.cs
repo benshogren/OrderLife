@@ -44,6 +44,13 @@ namespace OrderLife.Controllers
                     FViewMod.Other = budget.Other;
                     FViewMod.Food = budget.Food;
                     FViewMod.Income = budget.Income;
+                    FViewMod.Remainder = budget.Income - (budget.Room +  budget.GasHouse + budget.Electricity + budget.Water + budget.OtherUtilities + budget.CarPayment 
+                    + budget.CarInsurance + budget.GasCar + budget.PublicTransportation + budget.OtherTransportation + budget.CellPhone 
+                    + budget.HousePhone + budget.TVPlan + budget.Internet + budget.OtherMedia + budget.LoanPayments + 
+                    budget.OtherMonthlyLoanPayments + budget.Other + budget.Food);  
+
+
+
                 financesviewmods.Add(FViewMod);
             }
 

@@ -26,5 +26,7 @@ namespace OrderLife.Views.Finance.ViewModels {
         public decimal Other { get; set; }
         public decimal Food { get; set; }
         public decimal Income { get; set; }
+
+        public decimal Remainder;
     }
 }

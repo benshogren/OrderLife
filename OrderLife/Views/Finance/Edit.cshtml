@@ -4,28 +4,14 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
-
 <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
 
 
-    
-    
-    
-
-
-
-
-<p>If you have monthly food budget, plug in the number:</p>
-<p>Do you have any other monthly expenses?</p>
-<p>How much do you make every month (after taxes)?</p>
-<p>Behold your rough money plot. You're becoming more on-the-ball already. How about we take a look at your health?</p>
-
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>Finances</legend>
+        <legend>New Budget</legend>
 
         @Html.HiddenFor(model => model.ID)
 <p><b>How much do you pay for your housing every month (rent or mortgage)?</b></p> 
@@ -199,6 +185,4 @@
     </fieldset>
 } 
 <p>Behold your rough money plot. You're becoming more on-the-ball already. How about we take a look at your health?</p>
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+
