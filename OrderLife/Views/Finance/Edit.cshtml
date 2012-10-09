@@ -9,13 +9,26 @@
 <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
 
+
+    
+    
+    
+
+
+
+
+<p>If you have monthly food budget, plug in the number:</p>
+<p>Do you have any other monthly expenses?</p>
+<p>How much do you make every month (after taxes)?</p>
+<p>Behold your rough money plot. You're becoming more on-the-ball already. How about we take a look at your health?</p>
+
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
     <fieldset>
         <legend>Finances</legend>
 
         @Html.HiddenFor(model => model.ID)
-
+<p><b>How much do you pay for your housing every month (rent or mortgage)?</b></p> 
         <div class="editor-label">
             @Html.LabelFor(model => model.Room)
         </div>
@@ -23,9 +36,9 @@
             @Html.EditorFor(model => model.Room)
             @Html.ValidationMessageFor(model => model.Room)
         </div>
-
+<p><b>How much for utilities?</b></p>
         <div class="editor-label">
-            @Html.LabelFor(model => model.GasHouse)
+            Gas (Heating)
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.GasHouse)
@@ -49,15 +62,15 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.OtherUtilities)
+            Other Utilities
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.OtherUtilities)
             @Html.ValidationMessageFor(model => model.OtherUtilities)
         </div>
-
+<p><b>How much do you pay for transportation each month?</b></p>
         <div class="editor-label">
-            @Html.LabelFor(model => model.CarPayment)
+            Car Payment
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.CarPayment)
@@ -65,7 +78,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.CarInsurance)
+            Car Insurance
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.CarInsurance)
@@ -73,7 +86,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.GasCar)
+            Gas 
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.GasCar)
@@ -81,7 +94,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.PublicTransportation)
+            Public Transportation
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.PublicTransportation)
@@ -89,15 +102,17 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.OtherTransportation)
+            Other Transportation Costs
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.OtherTransportation)
             @Html.ValidationMessageFor(model => model.OtherTransportation)
         </div>
 
+<p><b>What are you monthly media expenses?</b></p>
+
         <div class="editor-label">
-            @Html.LabelFor(model => model.CellPhone)
+            Cell Phone Plan
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.CellPhone)
@@ -105,7 +120,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.HousePhone)
+            House Phone Bill
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.HousePhone)
@@ -113,7 +128,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.TVPlan)
+            Television Plan (Cable or Otherwise)
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.TVPlan)
@@ -121,7 +136,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Internet)
+            Internet Plan (if shared with the television plan, make sure to list total montly cost only once)
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Internet)
@@ -129,15 +144,17 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.OtherMedia)
+            Other Monthly Media Costs (online media accounts, games or game consoles that charge monthly, etc.)
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.OtherMedia)
             @Html.ValidationMessageFor(model => model.OtherMedia)
         </div>
 
+<p><b>Do you make monthly loan payments? (not including mortgages)</b></p>
+
         <div class="editor-label">
-            @Html.LabelFor(model => model.LoanPayments)
+            School Loan Payments
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.LoanPayments)
@@ -145,21 +162,13 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.OtherMonthlyLoanPayments)
+            Other Monthly Debt Payments
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.OtherMonthlyLoanPayments)
             @Html.ValidationMessageFor(model => model.OtherMonthlyLoanPayments)
         </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Other)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Other)
-            @Html.ValidationMessageFor(model => model.Other)
-        </div>
-
+<p><b>Not everyone keeps a monthly food budget, but if you do, plug in the number:</b></p>
         <div class="editor-label">
             @Html.LabelFor(model => model.Food)
         </div>
@@ -167,7 +176,15 @@
             @Html.EditorFor(model => model.Food)
             @Html.ValidationMessageFor(model => model.Food)
         </div>
-
+<p><b>Do you have any other monthly expenses you'd like to account for?</b></p>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Other)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Other)
+            @Html.ValidationMessageFor(model => model.Other)
+        </div>
+<p><b>How much do you make every month (after taxes)?</b></p>
         <div class="editor-label">
             @Html.LabelFor(model => model.Income)
         </div>
@@ -180,8 +197,8 @@
             <input type="submit" value="Save" />
         </p>
     </fieldset>
-}
-
+} 
+<p>Behold your rough money plot. You're becoming more on-the-ball already. How about we take a look at your health?</p>
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>

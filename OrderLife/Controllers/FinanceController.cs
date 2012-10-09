@@ -17,7 +17,7 @@ namespace OrderLife.Controllers
         //
         // GET: /Finance/
 
-        public ViewResult Index(int Step = 1) {
+        public ViewResult Index() {
             var financebudgetlist = db.Finances.ToList();
             var financesviewmods = new List<FinancesViewModel>();
             
@@ -50,7 +50,6 @@ namespace OrderLife.Controllers
             var financeVMIndex = new FinancesViewModelIndex();
             financeVMIndex.finances = financesviewmods;
             //financeVMIndex.budgetviewmodel = ViewModel;
-            financeVMIndex.Step = Step;
             return View(financeVMIndex);
         }
 
@@ -66,33 +65,29 @@ namespace OrderLife.Controllers
         //
         // GET: /Finance/Create
 
-        public ActionResult Create(decimal Room, decimal GasHouse, decimal Electricity, decimal Water, decimal OtherUtilities, 
-            decimal CarPayment, decimal CarInsurance, decimal GasCar, decimal PublicTransportation, decimal OtherTransportation, 
-            decimal CellPhone, decimal HousePhone, decimal TVPlan, decimal Internet, decimal OtherMedia, decimal LoanPayments,
-            decimal OtherMonthlyLoanPayments, decimal Other, decimal Food, decimal Income) 
+        public ActionResult Create() 
         {
             var Budget = new Finances();
-               Budget.Room = Room;
-               Budget.GasHouse = GasHouse;
-               Budget.Electricity = Electricity;
-               Budget.Water = Water;
-               Budget.OtherUtilities = OtherUtilities;
-               Budget.CarPayment = CarPayment;
-               Budget.CarInsurance = CarInsurance;
-               Budget.GasCar = GasCar;
-               Budget.PublicTransportation = PublicTransportation;
-               Budget.OtherTransportation = OtherTransportation;
-               Budget.CellPhone = CellPhone;
-               Budget.HousePhone = HousePhone;
-               Budget.TVPlan = TVPlan;
-               Budget.Internet = Internet;
-               Budget.OtherMedia = OtherMedia;
-               Budget.LoanPayments = LoanPayments;
-               Budget.OtherMonthlyLoanPayments = OtherMonthlyLoanPayments;
-               Budget.Other = Other;
-               Budget.Food = Food;
-               Budget.Income = Income;
-               Budget.Step = 1;
+            Budget.Room = 0;
+            Budget.GasHouse = 0;
+            Budget.Electricity = 0;
+            Budget.Water = 0;
+            Budget.OtherUtilities = 0;
+            Budget.CarPayment = 0;
+            Budget.CarInsurance = 0;
+            Budget.GasCar = 0;
+            Budget.PublicTransportation = 0;
+            Budget.OtherTransportation = 0;
+            Budget.CellPhone = 0;
+            Budget.HousePhone = 0;
+            Budget.TVPlan = 0;
+            Budget.Internet = 0;
+            Budget.OtherMedia = 0;
+            Budget.LoanPayments = 0;
+            Budget.OtherMonthlyLoanPayments = 0;
+            Budget.Other = 0;
+            Budget.Food = 0;
+            Budget.Income = 0;
             return View(Budget);
         } 
 
@@ -106,7 +101,7 @@ namespace OrderLife.Controllers
             {
                 db.Finances.Add(finances);
                 db.SaveChanges();
-                return RedirectToAction("Index");  
+                return RedirectToAction("Edit", new { id=finances.ID });  
             }
 
             return View(finances);

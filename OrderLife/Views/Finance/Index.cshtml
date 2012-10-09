@@ -6,108 +6,107 @@
 
 <h2>Finances</h2>
 
-@* @Html.ActionLink("________", "Create", new { Day = day, Time = time })*@
-
    @Html.ActionLink("Health", "HealthHub1", "Health")
 <p>
-    @Html.ActionLink("Start New", "Create", new { Room = 0,
-GasHouse= 0,
-Electricity= 0,
-Water= 0,
-OtherUtilities= 0,
-CarPayment= 0,
-CarInsurance= 0,
-GasCar= 0,
-PublicTransportation= 0,
-OtherTransportation= 0,
-CellPhone= 0,
-HousePhone= 0,
-TVPlan= 0,
-Internet= 0,
-OtherMedia= 0,
-LoanPayments= 0,
-OtherMonthlyLoanPayments= 0,
-Other= 0,
-Food= 0,
-Income= 0,})
+    @Html.ActionLink("Start New", "Create")
 </p>
 
-<table>
-@foreach (var item in Model.finances) {
-    <tr> 
-        <tr>
-            @Html.DisplayFor(modelItem => item.Room)
-            @Html.DisplayFor(modelItem => item.GasCar)
-        </tr>
-    </tr>
-}
-</table>
+
 <table>    
+
+@foreach (var item in Model.finances) {
+    
+<tr><th>title</th><th>cash </th></tr>
         <tr>
             <td>Room</td>
+            <td>@Html.DisplayFor(modelItem => item.Room)</td>
         </tr>
         <tr>
-            <td>GasHouse</td>
-        </t>
+            <td>Gas(Utility)</td>
+            <td>@Html.DisplayFor(modelItem => item.GasHouse)</td>
+        </tr>
         <tr>
             <td>Electricity</td>
+            <td>@Html.DisplayFor(modelItem => item.Electricity)</td>
         </tr>
         <tr>
             <td>Water</td>
+            <td>@Html.DisplayFor(modelItem => item.Water)</td>
         </tr>
         <tr>
-            <td>OtherUtilities</td>
+            <td>Other Utilities</td>
+            <td>@Html.DisplayFor(modelItem => item.OtherUtilities)</td>
         </tr>
         <tr>
-            <td>CarPayment</td>
+            <td>Car Payment</td>
+            <td>@Html.DisplayFor(modelItem => item.CarPayment)</td>
         </tr>
         <tr>
-            <td>CarInsurance</td>
+            <td>Car Insurance</td>
+            <td>@Html.DisplayFor(modelItem => item.CarInsurance)</td>
         </tr>
         <tr>
-            <td>GasCar</td>
+            <td>Gas(Car)</td>
+            <td>@Html.DisplayFor(modelItem => item.GasCar)</td>
         </tr>
         <tr>
-            <td>PublicTransportation</td>
+            <td>Public Transportation</td>
+            <td>@Html.DisplayFor(modelItem => item.PublicTransportation)</td>
         </tr>
         <tr>
-            <td>OtherTransportation</td>
+            <td>Other Transportation</td>
+            <td>@Html.DisplayFor(modelItem => item.OtherTransportation)</td>
         </tr>
         <tr>
-            <td>CellPhone</td>
+            <td>Cell Phone</td>
+            <td>@Html.DisplayFor(modelItem => item.CellPhone)</td>
         </tr>
         <tr>
-            <td>HousePhone</td>
+            <td>House Phone</td>
+            <td>@Html.DisplayFor(modelItem => item.HousePhone)</td>
         </tr>
         <tr>
-            <td>TVPlan</td>
+            <td>TV Plan</td>
+            <td>@Html.DisplayFor(modelItem => item.TVPlan)</td>
         </tr>
         <tr>
             <td>Internet</td>
+            <td>@Html.DisplayFor(modelItem => item.Internet)</td>
         </tr>
         <tr>
-            <td>OtherMedia</td>
+            <td>Other Media</td>
+            <td>@Html.DisplayFor(modelItem => item.OtherMedia)</td>
         </tr>
         <tr>
-            <td>LoanPayments</td>
-        </tr>
+            <td>Loan Payments</td>
+            <td>@Html.DisplayFor(modelItem => item.LoanPayments)</td>
+        </tr> 
+    if (item.OtherMonthlyLoanPayments > 0) {
         <tr>
-            <td>OtherMonthlyLoanPayments</td>
-        </tr>
+            <td>Other Monthly Debt Payments</td>
+           
+                
+                <td>@Html.DisplayFor(modelItem => item.OtherMonthlyLoanPayments)</td>
+        </tr>}
         <tr>
             <td>Other</td>
+            <td>@Html.DisplayFor(modelItem => item.Other)</td>
         </tr>
         <tr>
             <td>Food</td>
+            <td>@Html.DisplayFor(modelItem => item.Food)</td>
         </tr>
         <tr>
             <td>Income</td>
+            <td>@Html.DisplayFor(modelItem => item.Income)</td>
         </tr>
-</table>
+
     
-<table>
-@foreach (var item in Model.finances) {
-    <tr>
+    
+    
+    
+    
+    
         <tr>
             @Html.DisplayFor(modelItem => item.Room)
         </tr>
@@ -173,7 +172,8 @@ Income= 0,})
             @Html.ActionLink("Details", "Details", new { id=item.ID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.ID })
         </tr>
-    </tr>
+  
+    
 }
 
 </table>
