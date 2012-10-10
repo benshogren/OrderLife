@@ -11,19 +11,20 @@
 from wasting away into blubber. This page will let you plan an exercise routine and fit it into your weekly schedule.</p>
 <p></p>
 
-
-@foreach (var item in Model.workouts) {     
-    <p><b>Name of Plan:</b> @Html.DisplayFor(modelItem => item.Name)</p>      
-    <p><b>Description:</b> @Html.DisplayFor(modelItem => item.Description)</p>
- 
-    @Html.ActionLink("Add new Name and Description", "Create", "Workout")
-     
-    @Html.ActionLink("Edit", "Edit", new { id=item.ID }) 
+@if (Model.workouts != null) {
+        foreach (var item in Model.workouts) {     
+            <p><b>Name of Plan:</b> @Html.DisplayFor(modelItem => item.Name)</p>      
+            <p><b>Description:</b> @Html.DisplayFor(modelItem => item.Description)</p>
+            @Html.ActionLink("Delete", "DeleteWorkout", new { id = item.ID }) 
+            @Html.ActionLink("Edit", "EditWorkout", new { id = item.ID }) 
             
-    @Html.ActionLink("Details", "Details", new { id=item.ID }) 
-    @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        }
+} else { 
+                @Html.ActionLink("Create", "CreateWorkout", "Health")
 }
-
+            
+                
+            
 
 <table border="1">
     <tr>

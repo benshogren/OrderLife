@@ -45,6 +45,7 @@ namespace OrderLife.Controllers
             }
             foreach (var workout in workouts) {
                 var a = new WorkoutViewModel();
+                a.ID = workout.ID;
                 a.Name = workout.Name;
                 a.Description = workout.Description;
                 wviewmodels.Add(a);
@@ -177,40 +178,40 @@ namespace OrderLife.Controllers
         //
         // GET: /Health/Edit/5
 
-        public ActionResult Edit(int id) {
-            Exercises exercises = db.Exercises.Find(id);
-            return View(exercises);
+        public ActionResult EditWorkout(int id) {
+            WorkoutDescription workouts = wdb.WorkoutDescription.Find(id);
+            return View(workouts);
         }
 
         //
         // POST: /Health/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(Exercises exercises) {
+        public ActionResult EditWorkout(WorkoutDescription workouts) {
             if (ModelState.IsValid) {
-                db.Entry(exercises).State = EntityState.Modified;
-                db.SaveChanges();
+                wdb.Entry(workouts).State = EntityState.Modified;
+                wdb.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(exercises);
+            return View(workouts);
         }
 
         //
         // GET: /Health/Delete/5
 
-        public ActionResult Delete(int id) {
-            Exercises exercises = db.Exercises.Find(id);
-            return View(exercises);
+        public ActionResult DeleteWorkout(int id) {
+            WorkoutDescription workouts = wdb.WorkoutDescription.Find(id);
+            return View(workouts);
         }
 
         //
         // POST: /Health/Delete/5
 
-        [HttpPost, ActionName("Delete")]
-        public ActionResult DeleteConfirmed(int id) {
-            Exercises exercises = db.Exercises.Find(id);
-            db.Exercises.Remove(exercises);
-            db.SaveChanges();
+        [HttpPost, ActionName("DeleteWorkout")]
+        public ActionResult DeleteConfirmedWorkout(int id) {
+            WorkoutDescription workouts = wdb.WorkoutDescription.Find(id);
+            wdb.WorkoutDescription.Remove(workouts);
+            wdb.SaveChanges();
             return RedirectToAction("Index");
         }
 
