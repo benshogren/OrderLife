@@ -1,4 +1,4 @@
-﻿@model IEnumerable<OrderLife.Models.DailyDiet>
+﻿@model OrderLife.Views.DailyDiet.ViewModels.DietViewModelIndex
 
 @{
     ViewBag.Title = "Index";
@@ -23,7 +23,7 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model.diet) {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.StartDate)
@@ -61,6 +61,6 @@
 </p>
 
 <p>
-    @Html.ActionLink("Add Recipe", "Create", "Recipe")
+    @Html.ActionLink("Add Recipe", "Create", "Recipes")
 </p>
 

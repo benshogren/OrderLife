@@ -33,7 +33,7 @@ namespace OrderLife.Controllers
                 a.ID = appointment.ID;
                 a.DayName = new DatePretty().Prettify(a.Day);
                 appviewmodels.Add(a);
-                calData[a.Day-1, a.Time] = a;
+                calData[a.Day, a.Time] = a;
             }
             
             var vms = new AppointmentIndexViewModel();

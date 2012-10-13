@@ -103,8 +103,13 @@
             <td>$@Html.DisplayFor(modelItem => item.Remainder)</td>
         </tr>
         <tr>
-            @Html.ActionLink("Edit Budget", "Edit", new { id = item.ID }) 
+            @Html.ActionLink("Edit Budget", "Edit", new { id = item.ID }) |
         </tr>
+      <tr>
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID }) |
+        </tr> 
 }
-
+ <tr>
+            @Html.ActionLink("Create New Budget", "Create") 
+        </tr>
 </table>
