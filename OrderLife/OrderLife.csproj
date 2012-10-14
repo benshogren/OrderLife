@@ -79,6 +79,7 @@
     <Compile Include="Controllers\WeeklyDietEntryController.cs" />
     <Compile Include="Controllers\WorkoutController.cs" />
     <Compile Include="Domain\DatePretty.cs" />
+    <Compile Include="Domain\Filter.cs" />
     <Compile Include="Domain\FinanceCalc.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -119,6 +120,7 @@
     <Compile Include="Views\Time\ViewModel\AppointmentIndexViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\images\red-x.jpg" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />

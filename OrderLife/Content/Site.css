@@ -11,7 +11,9 @@ body {
     padding: 0;
     color: #696969;
 }
-
+.cal {
+    
+}
 a:link {
     color: #034af3;
     text-decoration: underline;
@@ -218,8 +220,17 @@ table {
     border: solid 1px #e8eef4;
     border-collapse: collapse;
 }
-
-table td {
+.delete-link 
+{
+    float: right;
+}
+table.cal td 
+{
+    width: 87px;
+    height: 18px;
+}
+table td 
+{
     padding: 5px;
     border: solid 1px #e8eef4;
 }

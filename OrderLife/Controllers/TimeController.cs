@@ -29,7 +29,12 @@ namespace OrderLife.Controllers
                 var a = new AppointmentViewModel();
                 a.Day = appointment.Day;
                 a.Time = appointment.Time;
-                a.AppointmentValue = appointment.AppointmentValue;
+                if (appointment.AppointmentValue.Length > 6) {
+                    a.AppointmentValue = appointment.AppointmentValue.Substring(0, 7) + "...";
+                } else {
+                    a.AppointmentValue = appointment.AppointmentValue;
+                }
+                
                 a.ID = appointment.ID;
                 a.DayName = new DatePretty().Prettify(a.Day);
                 appviewmodels.Add(a);

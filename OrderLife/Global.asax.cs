@@ -5,7 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Data.Entity;            // Database.SetInitialize
-using OrderLife.Models;              // MovieInitializer
+using OrderLife.Models;
+using OrderLife.Domain;              // MovieInitializer
 
 namespace OrderLife
 {
@@ -16,6 +17,7 @@ namespace OrderLife
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
+            filters.Add(new LogonAuthorize());
             filters.Add(new HandleErrorAttribute());
         }
 

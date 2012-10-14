@@ -36,31 +36,33 @@
 
 <h2>Schedule</h2>
 
-<table border="1">
+<table border="1" class="cal">
     <tr>
         <th></th><th>Sunday</th><th>Monday</th> <th>Tuesday</th><th>Wednesday</th> <th>Thursday</th><th>Friday</th><th>Saturday</th>
     </tr>
     
     @for (var time = 6; time < 24; time++) {
         <tr><td>
-            @if (time == 24 || time == 12) {
-                <div>12</div>
-            } else {
-                @((time) % 12) 
+            @{
+                var timeVal = "";
+                 if (time == 24 || time == 12) {
+                    timeVal += "12";
+                } else {
+                    timeVal = String.Format("{0}", ((time) % 12)); 
+                }
+                if (time < 12) {
+                    timeVal += ":00 AM";
+                } else { 
+                    timeVal += ":00 PM";
+                }
             }
-            @if (time < 12) {
-                <div>:00 AM</div>
-            } else { 
-                <div>:00 PM</div>
-            }
+            <div>@timeVal</div>
             </td>
         @for (var day = 0; day < 7; day++) {
             <td>
             @if (Model.calendarTableData[day, time] != null && !String.IsNullOrEmpty(Model.calendarTableData[day, time].AppointmentValue)) {
                 @Html.DisplayFor(model => model.calendarTableData[day, time].AppointmentValue);
-                using (Html.BeginForm("Delete", "Time", new RouteValueDictionary { { "id", @Model.calendarTableData[day, time].ID } })) {
-                    <input type="submit" value="Delete" /> 
-                }
+                <a class="delete-link" href="@Url.Action("Delete", new RouteValueDictionary { { "id", @Model.calendarTableData[day, time].ID } })"><img src="@Url.Content("~/Content/images/red-x.jpg")", alt="Delete" /></a>
             } else { 
                 @Html.ActionLink("________", "Create", new { Day = day, Time = time })
             }
