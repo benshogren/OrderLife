@@ -40,7 +40,7 @@ give your routine a description and name below.</p>
         @for (var day = 0; day < 7; day++) {
             <td>
             @if (Model.TableData[day, time] != null && !String.IsNullOrEmpty(Model.TableData[day, time].Exercise)) {
-                @Html.ActionLink(Model.TableData[day, time].Exercise, "Edit", new { id = Model.TableData[day, time].ID })
+                @Html.DisplayFor(model => model.TableData[day, time].Exercise);
                 using (Html.BeginForm("Delete", "Health", new RouteValueDictionary { { "id", @Model.TableData[day, time].ID } })) {
                     <input type="submit" value="Delete" /> 
                 }

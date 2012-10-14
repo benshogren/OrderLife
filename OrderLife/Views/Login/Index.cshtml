@@ -1,31 +1,32 @@
-﻿@model IEnumerable<OrderLife.Models.Hobbies>
+﻿@model IEnumerable<OrderLife.Models.Login>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Hobbies</h2>
+<h2>Index</h2>
 
 <p>
-    This page gives you a place to set your hobbies in stone. Naming them and journaling your experiences can refine your hobbies and help
-    you keep up with them. 
-</p>
-<p>
-    @Html.ActionLink("Add New Hobby", "Create")
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table>
     <tr>
         <th>
-            <b>Name</b>
+            UserName
         </th>
-
+        <th>
+            Password
+        </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Name)
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |

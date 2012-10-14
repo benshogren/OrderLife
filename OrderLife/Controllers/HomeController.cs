@@ -10,6 +10,9 @@ namespace OrderLife.Controllers
     {
         public ActionResult Index()
         {
+            if (! Request.IsAuthenticated) {
+                return (RedirectToAction("LogOn","Account"));
+            }
             ViewBag.Message = "Welcome to ASP.NET MVC!";
 
             return View();

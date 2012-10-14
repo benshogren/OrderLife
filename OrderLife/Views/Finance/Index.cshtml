@@ -6,6 +6,10 @@
 
 <h2>Finances</h2>
 
+        <tr>
+            When you're finished here, why not head over to the @Html.ActionLink("Health", "HealthHub1", "Health") section?
+        </tr>
+
 <table id = "budgetable">    
 
 @foreach (var item in Model.finances) {
@@ -104,7 +108,7 @@
             @Html.ActionLink("Delete", "Delete", new { id = item.ID }) |
         </tr> 
 }
- <tr>
+        <tr>
             @Html.ActionLink("Create New Budget", "Create") 
         </tr>
 </table>

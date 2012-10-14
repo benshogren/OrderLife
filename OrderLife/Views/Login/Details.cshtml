@@ -1,4 +1,4 @@
-﻿@model OrderLife.Models.Hobbies
+﻿@model OrderLife.Models.Login
 
 @{
     ViewBag.Title = "Details";
@@ -7,16 +7,16 @@
 <h2>Details</h2>
 
 <fieldset>
-    <legend>Hobbies</legend>
+    <legend>Login</legend>
 
-    <div class="display-label"><b>Name</b></div>
+    <div class="display-label">UserName</div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Name)
+        @Html.DisplayFor(model => model.UserName)
     </div>
 
-    <div class="display-label"><b>Journal</b></div>
+    <div class="display-label">Password</div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Journal)
+        @Html.DisplayFor(model => model.Password)
     </div>
 </fieldset>
 <p>

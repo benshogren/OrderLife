@@ -30,7 +30,7 @@
 
 }
 @if (Model.Step < 6) {
-    @Html.ActionLink("Done!", "Index", new { Step = Model.Step + 1 });
+    @Html.ActionLink("Next!", "Index", new { Step = Model.Step + 1 });
 }
 
 
@@ -57,7 +57,7 @@
         @for (var day = 0; day < 7; day++) {
             <td>
             @if (Model.calendarTableData[day, time] != null && !String.IsNullOrEmpty(Model.calendarTableData[day, time].AppointmentValue)) {
-                @Html.ActionLink(Model.calendarTableData[day, time].AppointmentValue, "Edit", new { id = Model.calendarTableData[day, time].ID })
+                @Html.DisplayFor(model => model.calendarTableData[day, time].AppointmentValue);
                 using (Html.BeginForm("Delete", "Time", new RouteValueDictionary { { "id", @Model.calendarTableData[day, time].ID } })) {
                     <input type="submit" value="Delete" /> 
                 }

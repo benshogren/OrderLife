@@ -1,4 +1,4 @@
-﻿@model OrderLife.Models.Hobbies
+﻿@model OrderLife.Models.Login
 
 @{
     ViewBag.Title = "Edit";
@@ -12,24 +12,24 @@
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>Hobbies</legend>
+        <legend>Login</legend>
 
         @Html.HiddenFor(model => model.ID)
 
         <div class="editor-label">
-            <b>@Html.LabelFor(model => model.Name)</b>
+            @Html.LabelFor(model => model.UserName)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Name)
-            @Html.ValidationMessageFor(model => model.Name)
+            @Html.EditorFor(model => model.UserName)
+            @Html.ValidationMessageFor(model => model.UserName)
         </div>
 
         <div class="editor-label">
-            <b>@Html.LabelFor(model => model.Journal)</b>
+            @Html.LabelFor(model => model.Password)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Journal)
-            @Html.ValidationMessageFor(model => model.Journal)
+            @Html.EditorFor(model => model.Password)
+            @Html.ValidationMessageFor(model => model.Password)
         </div>
 
         <p>

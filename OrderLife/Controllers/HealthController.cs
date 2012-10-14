@@ -41,7 +41,7 @@ namespace OrderLife.Controllers
                 a.ID = exercise.ID;
                 a.DayName = new DatePretty().Prettify(a.Day);
                 exviewmodels.Add(a);
-                TableData[a.Day - 1, a.Time] = a;
+                TableData[a.Day, a.Time] = a;
             }
             foreach (var workout in workouts) {
                 var a = new WorkoutViewModel();
