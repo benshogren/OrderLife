@@ -34,19 +34,6 @@
 }
 
 
-<table>
-@foreach (var item in Model.hobbies) {
-    <tr> 
-        <td>
-            @Html.DisplayFor(modelItem => item.ID)
-            @Html.DisplayFor(modelItem => item.Journal)
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-    </tr>
-}
-</table>
-
-
 <h2>Schedule</h2>
 
 <table border="1">

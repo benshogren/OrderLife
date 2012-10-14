@@ -87,6 +87,7 @@
     <Compile Include="Models\Appointments.cs" />
     <Compile Include="Models\DailyDiet.cs" />
     <Compile Include="Models\DailyDietEntry.cs" />
+    <Compile Include="Models\DailyEntryInitializer.cs" />
     <Compile Include="Models\DietInitializer.cs" />
     <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\DoctorInitializer.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="Views\DailyDiet\ViewModels\DailyDietEntryViewModel.cs" />
     <Compile Include="Views\DailyDiet\ViewModels\DietViewModel.cs" />
     <Compile Include="Views\DailyDiet\ViewModels\DietViewModelIndex.cs" />
+    <Compile Include="Views\DailyDiet\ViewModels\WeeklyDietEntryViewModel.cs" />
     <Compile Include="Views\Finance\ViewModels\FinancesViewModel.cs" />
     <Compile Include="Views\Finance\ViewModels\FinancesViewModelIndex.cs" />
     <Compile Include="Views\Health\ViewModels\ExerciseViewModel.cs" />

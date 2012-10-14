@@ -33,6 +33,7 @@ namespace OrderLife
 
         protected void Application_Start()
         {
+            Database.SetInitializer<DailyDietEntryDBContext>(new DailyEntryInitializer());
             Database.SetInitializer<WorkoutDescriptionDBContext>(new WorkoutInitialized());
             Database.SetInitializer<AppointmentsDBContext>(new SchedInitializer());
             Database.SetInitializer<FinancesDBContext>(new FinanceInitializer());

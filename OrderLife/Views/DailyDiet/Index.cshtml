@@ -7,12 +7,12 @@
 <h2>Daily Diet Plan</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New Diet", "Create")
 </p>
 <table>
     <tr>
         <th>
-            StartDate
+            Name
         </th>
         <th>
             Goals
@@ -43,28 +43,10 @@
 
 </table>
 
-<p>
-    @Html.ActionLink("Add Entry to Daily Diet", "Create", "DailyDietEntry")
-</p>
+
 
 <p>
-    Or would you prefer a 7-Day Diet Planner?
-</p>
-
-<p>
-    @Html.ActionLink("Add Entry to 7-Day Plan", "Create", "WeeklyDietEntry")
-</p>
-
-<p>
-    Add a diet-specific recipe to your recipe list?
-</p>
-
-<p>
-    @Html.ActionLink("Add Recipe", "Create", "Recipes")
-</p>
-
-<p>
-    @Html.ActionLink("Create", "DailyEntryCreate", "DailyDiet")
+    @Html.ActionLink("Add Entry to Daily Diet", "DailyEntryCreate", "DailyDiet")
 </p>
 <table>
     <tr>
@@ -93,4 +75,11 @@
 }
 
 </table>
+<p>
+    
+</p>
+<p>
+    Add a diet-specific recipe to your recipe list? |@Html.ActionLink("Add Recipe", "Create", "Recipes")
+</p>
+
 

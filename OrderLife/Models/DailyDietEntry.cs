@@ -9,7 +9,7 @@ namespace OrderLife.Models
     public class DailyDietEntry
     {
         public int ID { get; set; }
-        public int Time { get; set; }
+        public string Time { get; set; }
         public string Entry { get; set; }
     }
     public class DailyDietEntryDBContext : DbContext

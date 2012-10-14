@@ -9,6 +9,7 @@ namespace OrderLife.Views.DailyDiet.ViewModels {
     public class DietViewModelIndex {
         public List<DietViewModel> diet;
         public List<DailyDietEntryViewModel> dailyentry;
+        //public List<WeeklyDietEntryViewModel> weeklyentry;
         //public DailyDietEntryViewModel[,] TableData;
     }
 }
