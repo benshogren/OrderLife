@@ -1,0 +1,33 @@
+﻿@model OrderLife.Models.DailyDietEntry
+
+@{
+    ViewBag.Title = "DailyEntryDelete";
+}
+
+<h2>Delete Entry </h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Exercises</legend>
+
+    
+        @Html.HiddenFor(model => model.ID)
+
+    <div class="display-label"><b>Name</b></div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Time)
+    </div>
+
+    <div class="display-label"><b>Goals/Methods</b></div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Entry)
+    </div>
+
+    
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

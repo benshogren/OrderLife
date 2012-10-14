@@ -35,9 +35,8 @@
             @Html.DisplayFor(modelItem => item.Method)
         </td>
         <td>
-            @Html.ActionLink("Edit", "EditWorkout", new { id=item.ID }) |
-            @Html.ActionLink("Details", "DetailsWorkout", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "DeleteWorkout", new { id=item.ID })
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
         </td>
     </tr>
 }
@@ -63,4 +62,35 @@
 <p>
     @Html.ActionLink("Add Recipe", "Create", "Recipes")
 </p>
+
+<p>
+    @Html.ActionLink("Create", "DailyEntryCreate", "DailyDiet")
+</p>
+<table>
+    <tr>
+        <th>
+            Time
+        </th>
+        <th>
+            Entry
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.dailyentry) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Entry)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "DailyEntryEdit", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "DailyEntryDelete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
 

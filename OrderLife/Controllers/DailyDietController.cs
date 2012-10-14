@@ -23,7 +23,7 @@ namespace OrderLife.Controllers {
             var dailyentries = ddeb.DailyDietEntry.ToList();
             var dietviewmodels = new List<DietViewModel>();
             var entryviewmodels = new List<DailyDietEntryViewModel>();
-            var TableData = new DailyDietEntryViewModel[1, 24];
+            //var TableData = new DailyDietEntryViewModel[1, 24];
             foreach (var diet in diets) {
                 var newVM = new DietViewModel();
                 newVM.ID = diet.ID;
@@ -58,12 +58,8 @@ namespace OrderLife.Controllers {
         //
         // GET: /DailyDiet/Create
 
-        public ActionResult Create(string startDate, string goals, string method) {
-            var diet = new DailyDiet();
-            diet.StartDate = startDate;
-            diet.Goals = goals;
-            diet.Method = method;
-            return View(diet);
+        public ActionResult Create() {
+            return View();
         } 
 
         //
@@ -126,14 +122,73 @@ namespace OrderLife.Controllers {
         }
 
 
+        //
+        // GET: /DailyDiet/Details/5
 
-        //public ActionResult Create(int Day, int Time) {
-        //    var Ex = new Exercises();
-        //    Ex.Day = Day;
-        //    Ex.Time = Time;
-        //    Ex.DayName = new DatePretty().Prettify(Day);
-        //    return View(Ex);
-        //} 
+        public ViewResult DailyEntryDetails(int id) {
+            DailyDietEntry dailydietentry = ddeb.DailyDietEntry.Find(id);
+            return View(dailydietentry);
+        }
+
+        //
+        // GET: /DailyDiet/Create
+
+        public ActionResult DailyEntryCreate() {
+            return View();
+        }
+
+        //
+        // POST: /DailyDiet/Create
+
+        [HttpPost]
+        public ActionResult DailyEntryCreate(DailyDietEntry dailydietentry) {
+            if (ModelState.IsValid) {
+                ddeb.DailyDietEntry.Add(dailydietentry);
+                ddeb.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(dailydietentry);
+        }
+
+        //
+        // GET: /DailyDiet/Edit/5
+
+        public ActionResult DailyEntryEdit(int id) {
+            DailyDietEntry dailydietentry = ddeb.DailyDietEntry.Find(id);
+            return View(dailydietentry);
+        }
+
+        //
+        // POST: /DailyDiet/Edit/5
+
+        [HttpPost]
+        public ActionResult DailyEntryEdit(DailyDietEntry dailydietentry) {
+            if (ModelState.IsValid) {
+                ddeb.Entry(dailydietentry).State = EntityState.Modified;
+                ddeb.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(dailydietentry);
+        }
+
+        //
+        // GET: /DailyDiet/Delete/5
+
+        public ActionResult DailyEntryDelete(int id) {
+            DailyDietEntry dailydietentry = ddeb.DailyDietEntry.Find(id);
+            return View(dailydietentry);
+        }
+
+        //
+        // POST: /DailyDiet/Delete/5
+
+        [HttpPost, ActionName("DailyEntryDelete")]
+        public ActionResult DailyEntryDeleteConfirmed(int id) {
+            DailyDietEntry dailydietentry = ddeb.DailyDietEntry.Find(id);
+            ddeb.DailyDietEntry.Remove(dailydietentry);
+            ddeb.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
 

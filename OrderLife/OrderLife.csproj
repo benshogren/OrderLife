@@ -392,6 +392,18 @@
   <ItemGroup>
     <Content Include="Views\Health\EditWorkout.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DailyDiet\DailyEntryDetails.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DailyDiet\DailyEntryCreate.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DailyDiet\DailyEntryEdit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DailyDiet\DailyEntryDelete.cshtml" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
