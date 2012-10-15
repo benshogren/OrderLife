@@ -5,3 +5,7 @@ c:\users\ben\documents\visual studio 2010\Projects\OrderLife\OrderLife\bin\Entit
 c:\users\ben\documents\visual studio 2010\Projects\OrderLife\OrderLife\obj\Debug\ResolveAssemblyReference.cache
 c:\users\ben\documents\visual studio 2010\Projects\OrderLife\OrderLife\obj\Debug\OrderLife.dll
 c:\users\ben\documents\visual studio 2010\Projects\OrderLife\OrderLife\obj\Debug\OrderLife.pdb
+C:\Users\Ben\Documents\Visual Studio 2010\Projects\OrderLife\OrderLife\bin\AppHarbify.EF.dll
+C:\Users\Ben\Documents\Visual Studio 2010\Projects\OrderLife\OrderLife\bin\Devtalk.EF.CodeFirst.dll
+C:\Users\Ben\Documents\Visual Studio 2010\Projects\OrderLife\OrderLife\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Ben\Documents\Visual Studio 2010\Projects\OrderLife\OrderLife\bin\WebActivator.dll
