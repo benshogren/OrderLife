@@ -13,8 +13,5 @@ namespace OrderLife.Models
         public string OtherInfo { get; set; }
     }
     
-    public class AccountsDBContext : DbContext
-    {
-        public DbSet<Accounts> Accounts { get; set; }
-    }
+
 }

@@ -16,9 +16,5 @@ namespace OrderLife.Models
         public string AppointmentValue { get; set; }
         public string DayName { get; set; }
     }
-    public class AppointmentsDBContext : DbContext
-    {
-        public DbSet<Appointments> Appointments { get; set; }
-        //public DbSet<Time> Time { get; set; }
-    }
+
 }

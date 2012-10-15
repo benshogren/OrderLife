@@ -17,7 +17,7 @@ namespace OrderLife
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
-            filters.Add(new LogonAuthorize());
+            //filters.Add(new LogonAuthorize());
             filters.Add(new HandleErrorAttribute());
         }
 
@@ -35,19 +35,7 @@ namespace OrderLife
 
         protected void Application_Start()
         {
-            Database.SetInitializer<DailyDietEntryDBContext>(new Devtalk.EF.CodeFirst.DontDropDbJustCreateTablesIfModelChanged<DailyDietEntryDBContext>());
-            Database.SetInitializer<WorkoutDescriptionDBContext>(new Devtalk.EF.CodeFirst.DontDropDbJustCreateTablesIfModelChanged<WorkoutDescriptionDBContext>());
-            Database.SetInitializer<AppointmentsDBContext>(new Devtalk.EF.CodeFirst.DontDropDbJustCreateTablesIfModelChanged<AppointmentsDBContext>());
-            Database.SetInitializer<FinancesDBContext>(new Devtalk.EF.CodeFirst.DontDropDbJustCreateTablesIfModelChanged<FinancesDBContext>());
-            Database.SetInitializer<DoctorDBContext>(new Devtalk.EF.CodeFirst.DontDropDbJustCreateTablesIfModelChanged<DoctorDBContext>());
-            Database.SetInitializer<ExercisesDBContext>(new Devtalk.EF.CodeFirst.DontDropDbJustCreateTablesIfModelChanged<ExercisesDBContext>());
-            Database.SetInitializer<AccountsDBContext>(new Devtalk.EF.CodeFirst.DontDropDbJustCreateTablesIfModelChanged<AccountsDBContext>());
-            Database.SetInitializer<DailyDietDBContext>(new Devtalk.EF.CodeFirst.DontDropDbJustCreateTablesIfModelChanged<DailyDietDBContext>());
-            Database.SetInitializer<HobbiesDBContext>(new Devtalk.EF.CodeFirst.DontDropDbJustCreateTablesIfModelChanged<HobbiesDBContext>());
-            Database.SetInitializer<RecipesDBContext>(new Devtalk.EF.CodeFirst.DontDropDbJustCreateTablesIfModelChanged<RecipesDBContext>());
-            Database.SetInitializer<MedicationsDBContext>(new Devtalk.EF.CodeFirst.DontDropDbJustCreateTablesIfModelChanged<MedicationsDBContext>());
-            Database.SetInitializer<WeeklyDietEntryDBContext>(new Devtalk.EF.CodeFirst.DontDropDbJustCreateTablesIfModelChanged<WeeklyDietEntryDBContext>());
-            
+            Database.SetInitializer<AllDBContext>(new Devtalk.EF.CodeFirst.DontDropDbJustCreateTablesIfModelChanged<AllDBContext>());
 
             AreaRegistration.RegisterAllAreas();
 

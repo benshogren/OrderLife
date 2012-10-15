@@ -12,8 +12,5 @@ namespace OrderLife.Models
         public string Name { get; set; }
         public string Description { get; set; }
     }
-    public class WorkoutDescriptionDBContext : DbContext
-    {
-        public DbSet<WorkoutDescription> WorkoutDescription { get; set; }
-    }
+
 }

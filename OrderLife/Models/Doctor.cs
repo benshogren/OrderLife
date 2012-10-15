@@ -15,8 +15,5 @@ namespace OrderLife.Models
         public string Phone { get; set; }
         public string NextAppointment { get; set; }
     }
-    public class DoctorDBContext : DbContext
-    {
-        public DbSet<Doctor> Doctor { get; set; }
-    }
+
 }

@@ -6,12 +6,13 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using OrderLife.Models;
+using OrderLife.Domain;
 
 namespace OrderLife.Controllers
 { 
     public class HobbiesController : Controller
     {
-        private HobbiesDBContext db = new HobbiesDBContext();
+        private AllDBContext db = new AllDBContext();
 
         //
         // GET: /Hobbies/

@@ -6,12 +6,13 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using OrderLife.Models;
+using OrderLife.Domain;
 
 namespace OrderLife.Controllers
 { 
     public class WorkoutController : Controller
     {
-        private WorkoutDescriptionDBContext db = new WorkoutDescriptionDBContext();
+        private AllDBContext db = new AllDBContext();
 
         //
         // GET: /Workout/

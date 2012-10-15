@@ -14,8 +14,8 @@ namespace OrderLife.Controllers
 { 
     public class TimeController : Controller
     {
-        private AppointmentsDBContext appDb = new AppointmentsDBContext();
-        private HobbiesDBContext hdDb = new HobbiesDBContext();
+        private AllDBContext appDb = new AllDBContext();
+        private AllDBContext hdDb = new AllDBContext();
 
         //
         // GET: /Time/

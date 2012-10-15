@@ -32,8 +32,5 @@ namespace OrderLife.Models
         public decimal Income { get; set; }
 
     }
-    public class FinancesDBContext : DbContext
-    {
-        public DbSet<Finances> Finances { get; set; }
-    }
+
 }

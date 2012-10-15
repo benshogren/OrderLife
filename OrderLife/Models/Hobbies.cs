@@ -12,8 +12,5 @@ namespace OrderLife.Models
         public string Name { get; set; }
         public string Journal { get; set; }
     }
-    public class HobbiesDBContext : DbContext
-    {
-        public DbSet<Hobbies> Hobbies { get; set; }
-    }
+
 }

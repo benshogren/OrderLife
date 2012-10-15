@@ -12,8 +12,8 @@ using System.Text;
 
 namespace OrderLife.Controllers {
     public class DailyDietController : Controller {
-        private DailyDietDBContext ddb = new DailyDietDBContext();
-        private DailyDietEntryDBContext ddeb = new DailyDietEntryDBContext();
+        private AllDBContext ddb = new AllDBContext();
+        private AllDBContext ddeb = new AllDBContext();
 
         //
         // GET: /DailyDiet/

@@ -16,8 +16,5 @@ namespace OrderLife.Models
         public string NextRefill { get; set; }
         public string NameOfPrescriber { get; set; }
     }
-    public class MedicationsDBContext : DbContext
-    {
-        public DbSet<Medications> Medications { get; set; }
-    }
+
 }

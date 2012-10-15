@@ -15,8 +15,8 @@ namespace OrderLife.Controllers
 { 
     public class HealthController : Controller
     {
-        private ExercisesDBContext db = new ExercisesDBContext();
-        private WorkoutDescriptionDBContext wdb = new WorkoutDescriptionDBContext();
+        private AllDBContext db = new AllDBContext();
+        private AllDBContext wdb = new AllDBContext();
 
 
         public ActionResult HealthHub1()

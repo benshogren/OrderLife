@@ -15,8 +15,5 @@ namespace OrderLife.Models
         public string Exercise { get; set; }
         public string DayName;
     }
-    public class ExercisesDBContext : DbContext
-    {
-        public DbSet<Exercises> Exercises { get; set; }
-    }
+
 }

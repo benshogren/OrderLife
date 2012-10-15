@@ -12,8 +12,5 @@ namespace OrderLife.Models
         public string Time { get; set; }
         public string Entry { get; set; }
     }
-    public class DailyDietEntryDBContext : DbContext
-    {
-        public DbSet<DailyDietEntry> DailyDietEntry { get; set; }
-    }
+
 }

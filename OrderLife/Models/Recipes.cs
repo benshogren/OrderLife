@@ -12,8 +12,5 @@ namespace OrderLife.Models
         public string Name { get; set; } 
         public string Recipe { get; set; }
     }
-    public class RecipesDBContext : DbContext 
-    {
-        public DbSet<Recipes> Recipes { get; set; }
-    }
+
 }

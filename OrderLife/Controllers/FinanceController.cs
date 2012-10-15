@@ -7,12 +7,13 @@ using System.Web;
 using System.Web.Mvc;
 using OrderLife.Models;
 using OrderLife.Views.Finance.ViewModels;
+using OrderLife.Domain;
 
 namespace OrderLife.Controllers
 { 
     public class FinanceController : Controller
     {
-        private FinancesDBContext db = new FinancesDBContext();
+        private AllDBContext db = new AllDBContext();
 
         //
         // GET: /Finance/
